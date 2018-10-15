@@ -1,56 +1,55 @@
-git²Ö¿âµÄÊ¹ÓÃ
-Ò»¡¢ ÔÚgitÖĞµÄ×¼±¸¹¤×÷
-1. ´´½¨Ò»¸öĞÂ²Ö¿â£¬ÃüÃû±ØĞëÊÇ**.github.ioĞÎÊ½
-2. Ñ¡ÔñÒ»¸öÖ÷Ìâ
-¶ş¡¢ git BashÃüÁîµÄ²½Öè
+gitä»“åº“çš„ä½¿ç”¨
+ä¸€ã€ åœ¨gitä¸­çš„å‡†å¤‡å·¥ä½œ
+1. åˆ›å»ºä¸€ä¸ªæ–°ä»“åº“ï¼Œå‘½åå¿…é¡»æ˜¯**.github.ioå½¢å¼
+2. é€‰æ‹©ä¸€ä¸ªä¸»é¢˜
+äºŒã€ git Bashå‘½ä»¤çš„æ­¥éª¤
 1. cd ~
-Ìø×ªµ½µ±Ç°ÓÃ»§µÄhomeÄ¿Â¼
+è·³è½¬åˆ°å½“å‰ç”¨æˆ·çš„homeç›®å½•
 2. pwd
-²é¿´µ±Ç°Â·¾¶
+æŸ¥çœ‹å½“å‰è·¯å¾„
 eg;
 /c/Users/Administrator
 3. cd Desktop
-½øÈëµ½×ÀÃæÏÂ
-ps£º´òÉÏDe£¬°´tab¼ü×Ô¶¯²¹È«
+è¿›å…¥åˆ°æ¡Œé¢ä¸‹
+psï¼šæ‰“ä¸ŠDeï¼ŒæŒ‰tabé”®è‡ªåŠ¨è¡¥å…¨
 ![1.png](https://upload-images.jianshu.io/upload_images/14467401-d7949fcfdd63dd41.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-4. ssh-keygen -t rsa -C "ÓÊÏäÃû"
-´´½¨¹«Ô¿µ½C:\Users\Administrator\.ssh£¬È»ºó´ò¿ªid_rsa.pub£¬½«ÆäÖĞµÄ¹«Ô¿¸´ÖÆ£¬
-´ò¿ªgitÓÃ»§µÄsettingÏÂµÄSSH and GPG keys£¬´´½¨Ò»¸öĞÂµÄSSHÔ¿³×£¬½«¹«Ô¿¸´ÖÆ
+4. ssh-keygen -t rsa -C "é‚®ç®±å"
+åˆ›å»ºå…¬é’¥åˆ°C:\Users\Administrator\.sshï¼Œç„¶åæ‰“å¼€id_rsa.pubï¼Œå°†å…¶ä¸­çš„å…¬é’¥å¤åˆ¶ï¼Œ
+æ‰“å¼€gitç”¨æˆ·çš„settingä¸‹çš„SSH and GPG keysï¼Œåˆ›å»ºä¸€ä¸ªæ–°çš„SSHé’¥åŒ™ï¼Œå°†å…¬é’¥å¤åˆ¶
 ![2.png](https://upload-images.jianshu.io/upload_images/14467401-c4285772bfab7422.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-5. git clone ²©¿ÍÃû
-²©¿ÍÃû»ñÈ¡£º´ò¿ªgit²Ö¿â£¬µã»÷Clone or download£¬Ñ¡ÔñÊ¹ÓÃSSH£¬¸´ÖÆ²©¿ÍÃû
-eg£º
+5. git clone åšå®¢å
+åšå®¢åè·å–ï¼šæ‰“å¼€gitä»“åº“ï¼Œç‚¹å‡»Clone or downloadï¼Œé€‰æ‹©ä½¿ç”¨SSHï¼Œå¤åˆ¶åšå®¢å
+egï¼š
 git@github.com:zmOnely/1Monday.github.io.git
 ![3.png](https://upload-images.jianshu.io/upload_images/14467401-deae08a7a18aa3bc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 6. ls
-²é¿´×ÀÃæÏÂµÄÎÄ¼ş
-7. cd ²Ö¿âÃû
-½øÈëµ½²Ö¿âÖĞ
-eg£º
+æŸ¥çœ‹æ¡Œé¢ä¸‹çš„æ–‡ä»¶
+7. cd ä»“åº“å
+è¿›å…¥åˆ°ä»“åº“ä¸­
+egï¼š
 cd zmOnely.github.io/
 8. ls
-²é¿´Ò»ÏÂ²Ö¿âÖĞµÄÎÄ¼ş
+æŸ¥çœ‹ä¸€ä¸‹ä»“åº“ä¸­çš„æ–‡ä»¶
 ![4.png](https://upload-images.jianshu.io/upload_images/14467401-aee10feb8f2a86d8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
 9. git status
-²é¿´×´Ì¬
-10. touch ÎÄ¼şÃû.md
-ÔÚ²Ö¿âÖĞ´´½¨Ò»¸öÎÄ¼ş
-eg£ºtouch 1Monday.md
+æŸ¥çœ‹çŠ¶æ€
+10. touch æ–‡ä»¶å.md
+åœ¨ä»“åº“ä¸­åˆ›å»ºä¸€ä¸ªæ–‡ä»¶
+egï¼štouch 1Monday.md
 11. git status
-²é¿´´´½¨µÄ×´Ì¬
+æŸ¥çœ‹åˆ›å»ºçš„çŠ¶æ€
 12. git add 1Monday.md
-½«ĞÂ´´½¨µÄÎÄ¼şÔİÊ±Ìí¼Óµ½»º´æÖĞ
+å°†æ–°åˆ›å»ºçš„æ–‡ä»¶æš‚æ—¶æ·»åŠ åˆ°ç¼“å­˜ä¸­
 ![5.png](https://upload-images.jianshu.io/upload_images/14467401-79ba26d7bcbb42f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 13. git status
-²é¿´×´Ì¬
-14. git config --global user.email "ÓÊÏä"
-µÇÂ¼ÓÊÏä
-15. git config --global user.name "ÎÄ¼şÃû"
+æŸ¥çœ‹çŠ¶æ€
+14. git config --global user.email "é‚®ç®±"
+ç™»å½•é‚®ç®±
+15. git config --global user.name "æ–‡ä»¶å"
 ![6.png](https://upload-images.jianshu.io/upload_images/14467401-8874fd05f89c957a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-16. git commit -m "Ãû"
-Ìá½»
+16. git commit -m "å"
+æäº¤
 ![7.png](https://upload-images.jianshu.io/upload_images/14467401-d12d3938d8957219.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 17. git push -u origin master
-½«ÎÄ¼şÈ«²¿·Åµ½²Ö¿âÖĞ
+å°†æ–‡ä»¶å…¨éƒ¨æ”¾åˆ°ä»“åº“ä¸­
 ![8.png](https://upload-images.jianshu.io/upload_images/14467401-15ab741b6861937e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
