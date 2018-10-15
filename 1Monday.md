@@ -12,16 +12,16 @@ git仓库的使用
   3. cd Desktop
   进入到桌面下
   ps：打上De，按tab键自动补全
-  ![1.png](https://upload-images.jianshu.io/upload_images/14467401-d7949fcfdd63dd41.png?imageMogr2/auto-    orient/strip%7CimageView2/2/w/1240)
+![1.png](https://upload-images.jianshu.io/upload_images/14467401-d7949fcfdd63dd41.png?imageMogr2/auto-    orient/strip%7CimageView2/2/w/1240)
   4. ssh-keygen -t rsa -C "邮箱名"
   创建公钥到C:\Users\Administrator\.ssh，然后打开id_rsa.pub，将其中的公钥复制，
   打开git用户的setting下的SSH and GPG keys，创建一个新的SSH钥匙，将公钥复制
-  ![2.png](https://upload-images.jianshu.io/upload_images/14467401-c4285772bfab7422.png?imageMogr2/auto-  orient/strip%7CimageView2/2/w/1240)
+![2.png](https://upload-images.jianshu.io/upload_images/14467401-c4285772bfab7422.png?imageMogr2/auto-  orient/strip%7CimageView2/2/w/1240)
   5. git clone 博客名
   博客名获取：打开git仓库，点击Clone or download，选择使用SSH，复制博客名
   eg：
   git@github.com:zmOnely/1Monday.github.io.git
-  ![3.png](https://upload-images.jianshu.io/upload_images/14467401-deae08a7a18aa3bc.png?imageMogr2/auto-  orient/strip%7CimageView2/2/w/1240)
+![3.png](https://upload-images.jianshu.io/upload_images/14467401-deae08a7a18aa3bc.png?imageMogr2/auto-  orient/strip%7CimageView2/2/w/1240)
   6. ls
   查看桌面下的文件
   7. cd 仓库名
