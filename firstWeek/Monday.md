@@ -44,7 +44,7 @@ eg：touch 1Monday.md
   13. git status
 查看状态
   14. git config --global user.email "邮箱"
-登录邮箱
+登录邮箱.
   15. git config --global user.name "文件名"
 ![6.png](https://upload-images.jianshu.io/upload_images/14467401-8874fd05f89c957a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
   16. git commit -m "名"
