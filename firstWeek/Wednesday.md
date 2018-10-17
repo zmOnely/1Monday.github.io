@@ -1,63 +1,63 @@
-* ĞéÄâ»úµÄÄ¿Â¼½á¹¹
+* è™šæ‹Ÿæœºçš„ç›®å½•ç»“æ„
 ![image.png](https://upload-images.jianshu.io/upload_images/14467401-3afb713864b364f7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-* ÖØÆôÃüÁî
+* é‡å¯å‘½ä»¤
 	* reboot
-	* shutdown -r now Á¢¿ÌÖØÆô(rootÓÃ»§Ê¹ÓÃ)
-	* shutdown -r 10 Ê®·ÖÖÓºó×Ô¶¯ÖØÆô(rootÓÃ»§Ê¹ÓÃ)
-	* shutdown -c Èç¹ûÊÇÍ¨¹ıshutdownÃüÁîÉèÖÃÖØÆôµÄ»°£¬¿ÉÒÔÓÃ´ËÃüÁîÈ¡ÏûÖØÆô
-* ¹Ø»úÃüÁî
-	* halt Á¢¿Ì¹Ø»ú
-	* poweroff Á¢¿Ì¹Ø»ú
-	* shutdown -h now Á¢¿Ì¹Ø»ú(rootÓÃ»§Ê¹ÓÃ)
-	* shutdown -h 10 10·ÖÖÓºó×Ô¶¯¹Ø»ú(rootÓÃ»§Ê¹ÓÃ)
-* LinuxÔËĞĞ¼¶±ğ
-	* ÅäÖÃÎÄ¼ş: /etc/inittab
-	![ÔËĞĞ¼¶±ğ.png](https://upload-images.jianshu.io/upload_images/14467401-b2d7ca6f5802ecf9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-	* ÃüÁî
-		* runlevel ²é¿´ÔËĞĞ¼¶±ğ
-		½á¹ûÕ¹Ê¾¸ñÊ½£ºÇĞ»»Ç°µÄÔËĞĞ¼¶±ğ µ±Ç°µÄÔËĞĞ¼¶±ğ
-		* init ÁÙÊ±ÇĞ»»ÔËĞĞ¼¶±ğ
-		eg: ½«ÔËĞĞ¼¶±ğÇĞ»»³É3
+	* shutdown -r now ç«‹åˆ»é‡å¯(rootç”¨æˆ·ä½¿ç”¨)
+	* shutdown -r 10 ååˆ†é’Ÿåè‡ªåŠ¨é‡å¯(rootç”¨æˆ·ä½¿ç”¨)
+	* shutdown -c å¦‚æœæ˜¯é€šè¿‡shutdownå‘½ä»¤è®¾ç½®é‡å¯çš„è¯ï¼Œå¯ä»¥ç”¨æ­¤å‘½ä»¤å–æ¶ˆé‡å¯
+* å…³æœºå‘½ä»¤
+	* halt ç«‹åˆ»å…³æœº
+	* poweroff ç«‹åˆ»å…³æœº
+	* shutdown -h now ç«‹åˆ»å…³æœº(rootç”¨æˆ·ä½¿ç”¨)
+	* shutdown -h 10 10åˆ†é’Ÿåè‡ªåŠ¨å…³æœº(rootç”¨æˆ·ä½¿ç”¨)
+* Linuxè¿è¡Œçº§åˆ«
+	* é…ç½®æ–‡ä»¶: /etc/inittab
+	![è¿è¡Œçº§åˆ«.png](https://upload-images.jianshu.io/upload_images/14467401-b2d7ca6f5802ecf9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* å‘½ä»¤
+		* runlevel æŸ¥çœ‹è¿è¡Œçº§åˆ«
+		ç»“æœå±•ç¤ºæ ¼å¼ï¼šåˆ‡æ¢å‰çš„è¿è¡Œçº§åˆ« å½“å‰çš„è¿è¡Œçº§åˆ«
+		* init ä¸´æ—¶åˆ‡æ¢è¿è¡Œçº§åˆ«
+		eg: å°†è¿è¡Œçº§åˆ«åˆ‡æ¢æˆ3
 		init 3
-* ÍøÂçÅäÖÃ
-	* ²é¿´Ö÷»úÃû
-		* hostname ²é¿´Ö÷»úÃû
-	* ĞŞ¸ÄÖ÷»úÃû
-		* hostname Ãû×Ö ÁÙÊ±ĞŞ¸Ä(Ò»´ÎĞÔĞŞ¸Ä,ÖØÆôÖ®ºó±ä»ØÔ­À´)
-		* vi /etc/hostname ÓÀ¾ÃĞŞ¸Ä
-		ps:°´»Ø³µÖ®ºó»á½øÈëÒ»¸ö½çÃæ£¬°´"i",Ê¹Æä´¦ÓÚ¿ÉÒÔ±àĞ´×´Ì¬£¬Ğ´ÉÏĞÂµÄÃû×Ö£¬":wq"±£´æÍË³ö
-	* ²âÊÔÍøÂçÁ¬½Ó
-		* ping [Ñ¡Ïî] Ä¿±êÖ÷»ú
+* ç½‘ç»œé…ç½®
+	* æŸ¥çœ‹ä¸»æœºå
+		* hostname æŸ¥çœ‹ä¸»æœºå
+	* ä¿®æ”¹ä¸»æœºå
+		* hostname åå­— ä¸´æ—¶ä¿®æ”¹(ä¸€æ¬¡æ€§ä¿®æ”¹,é‡å¯ä¹‹åå˜å›åŸæ¥)
+		* vi /etc/hostname æ°¸ä¹…ä¿®æ”¹
+		ps:æŒ‰å›è½¦ä¹‹åä¼šè¿›å…¥ä¸€ä¸ªç•Œé¢ï¼ŒæŒ‰"i",ä½¿å…¶å¤„äºå¯ä»¥ç¼–å†™çŠ¶æ€ï¼Œå†™ä¸Šæ–°çš„åå­—ï¼Œ":wq"ä¿å­˜é€€å‡º
+	* æµ‹è¯•ç½‘ç»œè¿æ¥
+		* ping [é€‰é¡¹] ç›®æ ‡ä¸»æœº
 		eg:
 		ping www.baidu.com
-		ps:°´Ctrl+CÖĞÖ¹²âÊÔ
-	* ²é¿´ÍøÂç½Ó¿ÚĞÅÏ¢
-		* ifconfig ²é¿´ËùÓĞ»î¶¯ÍøÂç½Ó¿ÚµÄĞÅÏ¢
-		* ifconfig ÍøÂç½Ó¿ÚÃû ²é¿´Ö¸¶¨ÍøÂç½Ó¿ÚĞÅÏ¢?????????????Àı×Ó
-		ps:Ifconfig²»ÄÜÓÃ£¬Ê¹ÓÃyumÃüÁî 
-		yum install net-tools yumÃüÁîÏàµ±ÓÚLinuxÏµÍ³µÄÓ¦ÓÃÉÌµê£¬ÏÂÔØ°²×°¸÷ÖÖĞèÒªµÄÈí¼ş,"install"ÒâË¼ÊÇ°²×°
-	* ÉèÖÃ·À»ğÇ½
-		* service firewalld status ²é¿´·À»ğÇ½×´Ì¬
-		* systemctl stop firewalld ÁÙÊ±¹Ø±Õcentos7·À»ğÇ½
-		* systemctl disable firewalld ½ûÖ¹¿ª»úÆô¶¯
-	* ÉèÖÃÍøÂçĞÅÏ¢
+		ps:æŒ‰Ctrl+Cä¸­æ­¢æµ‹è¯•
+	* æŸ¥çœ‹ç½‘ç»œæ¥å£ä¿¡æ¯
+		* ifconfig æŸ¥çœ‹æ‰€æœ‰æ´»åŠ¨ç½‘ç»œæ¥å£çš„ä¿¡æ¯
+		* ifconfig ç½‘ç»œæ¥å£å æŸ¥çœ‹æŒ‡å®šç½‘ç»œæ¥å£ä¿¡æ¯?????????????ä¾‹å­
+		ps:Ifconfigä¸èƒ½ç”¨ï¼Œä½¿ç”¨yumå‘½ä»¤ 
+		yum install net-tools yumå‘½ä»¤ç›¸å½“äºLinuxç³»ç»Ÿçš„åº”ç”¨å•†åº—ï¼Œä¸‹è½½å®‰è£…å„ç§éœ€è¦çš„è½¯ä»¶,"install"æ„æ€æ˜¯å®‰è£…
+	* è®¾ç½®é˜²ç«å¢™
+		* service firewalld status æŸ¥çœ‹é˜²ç«å¢™çŠ¶æ€
+		* systemctl stop firewalld ä¸´æ—¶å…³é—­centos7é˜²ç«å¢™
+		* systemctl disable firewalld ç¦æ­¢å¼€æœºå¯åŠ¨
+	* è®¾ç½®ç½‘ç»œä¿¡æ¯
 		* vi /etc/sysconfig/network-scripts/ifcfg-ens33 ??????????
-	* ÉèÖÃSELinux
-		* ²é¿´SElinux£¬¿ÉÄÜ·µ»ØµÄ½á¹ûÓĞÈıÖÖ
-		Enforcing£ºÇ¿ÖÆÄ£Ê½£¬´ú±í¼ÇÂ¼°²È«¾¯¸æÇÒ×èÖ¹¿ÉÒÉĞĞÎª
-		Permissive£º¿íÈİÄ£Ê½£¬´ú±í¼ÇÂ¼°²È«¾¯¸æµ«²»×èÖ¹¿ÉÒÉĞĞÎª
-		Disable£º¹Ø±Õ
-		* µ±Ç°ÓĞĞ§
+	* è®¾ç½®SELinux
+		* æŸ¥çœ‹SElinuxï¼Œå¯èƒ½è¿”å›çš„ç»“æœæœ‰ä¸‰ç§
+		Enforcingï¼šå¼ºåˆ¶æ¨¡å¼ï¼Œä»£è¡¨è®°å½•å®‰å…¨è­¦å‘Šä¸”é˜»æ­¢å¯ç–‘è¡Œä¸º
+		Permissiveï¼šå®½å®¹æ¨¡å¼ï¼Œä»£è¡¨è®°å½•å®‰å…¨è­¦å‘Šä½†ä¸é˜»æ­¢å¯ç–‘è¡Œä¸º
+		Disableï¼šå…³é—­
+		* å½“å‰æœ‰æ•ˆ
 		setenforce	[ Enforcing | Permissive| 1| 0 ]
-		¸ÃÃüÁî¿ÉÒÔÁ¢¼´¸Ä±äSELinuxÔËĞĞ×´Ì¬£¬ÔÚEnforcing ºÍPermissive  Ö®¼äÇĞ»»,¹Ø»úÖØÆôÖ®ºóÊ§Ğ§
-		* ÓÀ¾ÃÓĞĞ§
-		ĞŞ¸ÄÅäÖÃÎÄ¼ş/etc/selinux/config,½«SELINUX=enforcingĞŞ¸ÄÎªSELINUX=disabledÖØÆôÉúĞ§
+		è¯¥å‘½ä»¤å¯ä»¥ç«‹å³æ”¹å˜SELinuxè¿è¡ŒçŠ¶æ€ï¼Œåœ¨Enforcing å’ŒPermissive  ä¹‹é—´åˆ‡æ¢,å…³æœºé‡å¯ä¹‹åå¤±æ•ˆ
+		* æ°¸ä¹…æœ‰æ•ˆ
+		ä¿®æ”¹é…ç½®æ–‡ä»¶/etc/selinux/config,å°†SELINUX=enforcingä¿®æ”¹ä¸ºSELINUX=disabledé‡å¯ç”Ÿæ•ˆ
 
 	
 		
 		
-* ĞéÄâ»úÍøÂçÅäÖÃÍ¼	
-![ĞéÄâ»úÍøÂçÅäÖÃÍ¼.png](https://upload-images.jianshu.io/upload_images/14467401-9a5e668357b59663.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+* è™šæ‹Ÿæœºç½‘ç»œé…ç½®å›¾	
+![è™šæ‹Ÿæœºç½‘ç»œé…ç½®å›¾.png](https://upload-images.jianshu.io/upload_images/14467401-9a5e668357b59663.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 	
 
