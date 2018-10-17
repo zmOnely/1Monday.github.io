@@ -51,13 +51,25 @@
 		setenforce	[ Enforcing | Permissive| 1| 0 ]
 		该命令可以立即改变SELinux运行状态，在Enforcing 和Permissive  之间切换,关机重启之后失效
 		* 永久有效
-		修改配置文件/etc/selinux/config,将SELINUX=enforcing修改为SELINUX=disabled重启生效
-
-	
-		
-		
+		修改配置文件/etc/selinux/config,将SELINUX=enforcing修改为SELINUX=disabled重启生效	
 * 虚拟机网络配置图	
 ![虚拟机网络配置图.png](https://upload-images.jianshu.io/upload_images/14467401-9a5e668357b59663.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+* Linux命令
+	* 帮助
+		* 内部命令：属于Shell解析器的一部分
+	    cd 切换目录（change directory）
+	    pwd 显示当前工作目录（print working directory）
+	    help 帮助
+		* 外部命令：独立于Shell解析器之外的文件程序
+	    ls 显示文件和目录列表（list）
+	    mkdir 创建目录（make directoriy）
+	    cp 复制文件或目录（copy）
+		* 查看帮助文档
+	    内部命令：help + 命令（help cd）
+	    外部命令：man + 命令（man ls）
+	* 基本命令
+		
+	   
 
 	
 
