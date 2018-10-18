@@ -19,11 +19,13 @@
 		* init 临时切换运行级别
 		* eg: 将运行级别切换成3
 		* init 3
+		* ![runlevel.png](https://upload-images.jianshu.io/upload_images/14467401-6a192f691df5e2e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 * 网络配置
 	* 查看主机名
 		* hostname 查看主机名
 	* 修改主机名
 		* hostname 名字 临时修改(一次性修改,重启之后变回原来)
+		* ![hostname.png](https://upload-images.jianshu.io/upload_images/14467401-df14dcc7728968f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 		* vi /etc/hostname 永久修改
 		* ps:按回车之后会进入一个界面，按"i",使其处于可以编写状态，写上新的名字，":wq"保存退出
 	* 测试网络连接
@@ -31,27 +33,34 @@
 		* eg:
 		* ping www.baidu.com
 		* ps:按Ctrl+C中止测试
+		* ![ping.png](https://upload-images.jianshu.io/upload_images/14467401-22b8a0049aaa8790.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* 查看网络接口信息
 		* ifconfig 查看所有活动网络接口的信息
-		* ifconfig 网络接口名 查看指定网络接口信息?????????????例子
+		* ![ifconfig.png](https://upload-images.jianshu.io/upload_images/14467401-906113ba33c0fe20.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+		* ifconfig 网络接口名 查看指定网络接口信息
+		* ![ifconfig1.png](https://upload-images.jianshu.io/upload_images/14467401-39e708ccbc6a359a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 		* ps:Ifconfig不能用，使用yum命令 
 		* yum install net-tools yum命令相当于Linux系统的应用商店，下载安装各种需要的软件,"install"意思是安装
 	* 设置防火墙
 		* service firewalld status 查看防火墙状态
+		* ![防火墙.png](https://upload-images.jianshu.io/upload_images/14467401-659af90c4bc43076.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 		* systemctl stop firewalld 临时关闭centos7防火墙
 		* systemctl disable firewalld 禁止开机启动
 	* 设置网络信息
-		* vi /etc/sysconfig/network-scripts/ifcfg-ens33 ??????????
+		* vi /etc/sysconfig/network-scripts/ifcfg-ens33
+		* ps:会进入到如图界面，修改即可
+		* ![设置网信.png](https://upload-images.jianshu.io/upload_images/14467401-4b57a968781a6617.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* 设置SELinux
 		* 查看SElinux，可能返回的结果有三种
 		* Enforcing：强制模式，代表记录安全警告且阻止可疑行为
 		* Permissive：宽容模式，代表记录安全警告但不阻止可疑行为
 		* Disable：关闭
 		* 当前有效
-		* setenforce	[ Enforcing | Permissive| 1| 0 ]
+		* setenforce [ Enforcing | Permissive | 1|0]
 		* 该命令可以立即改变SELinux运行状态，在Enforcing 和Permissive  之间切换,关机重启之后失效
 		* 永久有效
-		* 修改配置文件/etc/selinux/config,将SELINUX=enforcing修改为SELINUX=disabled重启生效	
+		* vi /etc/selinux/config,将SELINUX=enforcing修改为SELINUX=disabled重启生效
+		* ![selinux.png](https://upload-images.jianshu.io/upload_images/14467401-3c013c0651b8890d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 * 虚拟机网络配置图	
 * ![虚拟机网络配置图.png](https://upload-images.jianshu.io/upload_images/14467401-9a5e668357b59663.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 * Linux命令
@@ -78,14 +87,17 @@
 			* -R:递归显示内容
 			* mkdir 创建新的目录 (Make Directory)
 			* du 统计目录及文件的空间占用情况(estimate file space  usage)
+			* 格式：du	[选项] [目录或文件名]
 			* -a：统计时包括所有的文件，而不仅仅只统计目录
 			* -h：以更易读的字节单位（K、M等）显示信息
 			* -s：只统计每个参数所占用空间总的大小
+			* ![du.png](https://upload-images.jianshu.io/upload_images/14467401-181d030d98e700be.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 		* 文件操作命令
-			* touch 新建空文件，或更新文件时间标记
+			* touch 新建空文件 ">"和其类似
 			* file 查看文件类型
-			* cp 复制(copy)文件或目录
-			* 格式：cp  [选项]   源文件或目录  目标文件或目录
+			* ![file.png](https://upload-images.jianshu.io/upload_images/14467401-e43b7531ea6f72aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+			* cp 复制(copy)文件
+			* 格式：cp  [选项]  源文件或目录  目标文件或目录
 			* -r：递归复制整个目录树
 			* -p：保持源文件的属性不变
 			* -f：强制覆盖目标同名文件或目录
@@ -112,6 +124,7 @@
 			* -and	表达式与
 		* 文件内容操作命令
 			* cat 显示出文件的全部内容
+			* ![cat.png](https://upload-images.jianshu.io/upload_images/14467401-44b3f49df49b0941.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 			* more 全屏方式分页显示文件内容 (less)
 			* 操作方法
 				* 按Enter键向下逐行滚动
@@ -125,6 +138,7 @@
 			* -l：统计行数
 			* -w：统计单词个数
 			* -c：统计字节数
+			* ![wc.png](https://upload-images.jianshu.io/upload_images/14467401-17952db9a63f5e7b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 			* grep 查找文件里符合条件的字符串
 			* 格式:grep  [选项]   <关键字>  <文件…>
 			* -c:计算匹配关键字的行数
@@ -132,16 +146,17 @@
 			* -n:显示匹配的行及其行号
 			* -s: 不显示不存在或不匹配文本的错误信息
 			* -h: 查询多个文件时不显示文件名
-			* -l:   查询文件时只显示匹配字符所在的文件名
+			* -l: 查询文件时只显示匹配字符所在的文件名
 			* --color=auto:将找到的关键字部分加上颜色显示
+			* ![grep.png](https://upload-images.jianshu.io/upload_images/14467401-52d462785582064b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 		* 压缩命令
 			* gzip 压缩（解压）文件或目录，压缩文件后缀为gz 
 			* bzip2 压缩（解压）文件或目录，压缩文件后缀为bz2 
 			* tar 压缩、解压文件
 			* 格式:
-			* tar	[cvf] 压缩名 文件名 （压缩文件）
-			* tar	[xvf] 文件名.tar    （解压文件）
-			* -c：创建 .tar 格式的包文件
+			* tar [cvf] 压缩名 文件名 （压缩文件）
+			* tar [xvf] 文件名.tar    （解压文件）
+			* -c：创建.tar 格式的包文件
 			* -x：解开.tar格式的包文件
 			* -v：输出详细信息
 			* -f：表示使用归档文件......
