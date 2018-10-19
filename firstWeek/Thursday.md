@@ -145,6 +145,33 @@
 			* ps：
 		    * 只能删除那些没有被任何用户指定为主组的组
 			* groups [用户名] 显示用户所属组
+* 文件及目录权限管理
+	* 权限和权限值
+		* 读：读取文件的内容；列出目录里的对象
+		* 写(w)：允许修改文件；在目录里面新建或者删除文件
+		* 执行(x)：允许执行文件；允许进入目录里
+	* ![权限.png](https://upload-images.jianshu.io/upload_images/14467401-cfebcf37323be099.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* 数字权限
+		* 读：4 
+		* 写：2
+		* 执行：1
+	* 1.chmod [ugoa] [+-=] [rwx] file/dir 
+	* 2.chmod nnn file/dir 设置文件或目录权限 
+		* u:属主  g:属组  o:其他用户  a:所有用户
+		* +:添加权限  -:删除权限  =:赋予权限
+		* nnn:三位八进制的权限
+	* chmod 修改文件权限命令
+		* 格式：
+			* chown 属主 file/dir 
+			* chown :属组 file/dir
+			* chown 属主:属组 file/dir
+		* 常用命令选项
+			* -R：递归的修改指定目录下所有文件、子目录的归属
+	* eg：
+	* 1.chmod  u+x  a.txt
+	* 2.chmod  750  b.txt
+		
+
 			
 				
 
