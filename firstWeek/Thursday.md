@@ -158,28 +158,18 @@
 	* chmod 修改文件权限命令
 		* 格式：
 		* 1.chmod [ugoa] [+-=] [rwx] file/dir 
-			* u:属主  g:属组  o:其他用户  a:所有用户
-			* +:添加权限  -:删除权限  =:赋予权限
+			* ps：u:属主  g:属组  o:其他用户  a:所有用户
+			+:添加权限  -:删除权限  =:赋予权限
 		* 2.chmod nnn file/dir 设置文件或目录权限 
-			* nnn:三位八进制的权限
 		* eg：
 		* 1.chmod  u+x  a.txt
-		* 2.chmod  750  b.txt		
-	* chown 属主 file/dir 
-	* chown :属组 file/dir
-	* chown 属主:属组 file/dir
-	* 常用命令选项
-	* -R：递归的修改指定目录下所有文件、子目录的归属
-	
+		* 2.chmod  750  b.txt
+	* chown 改变文件所属
+		* chown 用户名 file/dir 属主
+		* chown :用户名 file/dir 属组
+		* chown  用户名:用户名 file/dir 属主:属组
+		* -R：递归的修改指定目录下所有文件、子目录的归属
 		
-
-			
-				
-
-			
-
-			
-			
 			
 			
 	
