@@ -146,10 +146,14 @@
 			* 格式:grep  [选项]   <关键字>  <文件…>
 				* -c:计算匹配关键字的行数
 				* -i:忽略字符大小写的差别
+				* ![-i.png](https://upload-images.jianshu.io/upload_images/14467401-b3d6fe8edd00b034.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 				* -n:显示匹配的行及其行号
+				* ![-n.png](https://upload-images.jianshu.io/upload_images/14467401-6cc8780de5cfd5d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 				* -s: 不显示不存在或不匹配文本的错误信息
+				* ![-s.png](https://upload-images.jianshu.io/upload_images/14467401-7226cbc1b4fd4169.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 				* -h: 查询多个文件时不显示文件名
 				* -l: 查询文件时只显示匹配字符所在的文件名
+				！![-l.png](https://upload-images.jianshu.io/upload_images/14467401-0ff9e50a624712ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 				* --color=auto:将找到的关键字部分加上颜色显示
 				* ![grep.png](https://upload-images.jianshu.io/upload_images/14467401-52d462785582064b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 		* 压缩命令
@@ -162,7 +166,7 @@
 				* -c：创建.tar 格式的包文件
 				* -x：解开.tar格式的包文件
 				* -v：输出详细信息
-				* -f：表示使用归档文件......
+				* -f：表示使用归档文件
 			
 
 
