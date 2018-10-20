@@ -1,12 +1,12 @@
-* ÕıÔò±í´ïÊ½
-	* ¶¨Òå
-		* ÓÖ³Æ¹æÔò±í´ïÊ½£¬¼ÆËã»ú¿ÆÑ§µÄÒ»¸ö¸ÅÄî£¬ÕıÔò±íÍ¨³£±»ÓÃÀ´¼ìË÷¡¢Ìæ»»ÄÇĞ©·ûºÏÄ³¸öÄ£Ê½(¹æÔò)µÄÎÄ±¾£¬
-		* ÕıÔò±í´ïÊ½¾ÍÊÇÎªÁËÑéÖ¤ÊäÈëÄÚÈİÊÇ·ñ·ûºÏ±ê×¼¶ø¶¨ÒåµÄÒ»Ì×¹æÔò
-		* ![ÕıÔò±í.png](https://upload-images.jianshu.io/upload_images/14467401-e3f5179d19372289.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-	* ±í´ïÊ½
-	* ![ÕıÔò.png](https://upload-images.jianshu.io/upload_images/14467401-8fb0c046913bc5dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-	* ![ÕıÔò.png](https://upload-images.jianshu.io/upload_images/14467401-766bddad8c3b5269.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-	* ![ÕıÔò.png](https://upload-images.jianshu.io/upload_images/14467401-e306ff1df27ed43e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-	* ![ÕıÔò.png](https://upload-images.jianshu.io/upload_images/14467401-ef5d6ca58e8a8e99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+* æ­£åˆ™è¡¨è¾¾å¼
+	* å®šä¹‰
+		* åˆç§°è§„åˆ™è¡¨è¾¾å¼ï¼Œè®¡ç®—æœºç§‘å­¦çš„ä¸€ä¸ªæ¦‚å¿µï¼Œæ­£åˆ™è¡¨é€šå¸¸è¢«ç”¨æ¥æ£€ç´¢ã€æ›¿æ¢é‚£äº›ç¬¦åˆæŸä¸ªæ¨¡å¼(è§„åˆ™)çš„æ–‡æœ¬ï¼Œ
+		* æ­£åˆ™è¡¨è¾¾å¼å°±æ˜¯ä¸ºäº†éªŒè¯è¾“å…¥å†…å®¹æ˜¯å¦ç¬¦åˆæ ‡å‡†è€Œå®šä¹‰çš„ä¸€å¥—è§„åˆ™
+		* ![æ­£åˆ™è¡¨.png](https://upload-images.jianshu.io/upload_images/14467401-e3f5179d19372289.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* è¡¨è¾¾å¼
+	* ![æ­£åˆ™.png](https://upload-images.jianshu.io/upload_images/14467401-8fb0c046913bc5dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* ![æ­£åˆ™.png](https://upload-images.jianshu.io/upload_images/14467401-766bddad8c3b5269.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* ![æ­£åˆ™.png](https://upload-images.jianshu.io/upload_images/14467401-e306ff1df27ed43e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* ![æ­£åˆ™.png](https://upload-images.jianshu.io/upload_images/14467401-ef5d6ca58e8a8e99.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 	
