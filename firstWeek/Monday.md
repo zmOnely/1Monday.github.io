@@ -40,5 +40,5 @@
 		* ps：这个步骤最好每次执行下，否则可能会出现git push时这样的错误
 		* ![pull.png](https://upload-images.jianshu.io/upload_images/14467401-f7c0ac3a9bbd6e10.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* git push -u origin master 将文件全部传到远程仓库中
-		*ps：第一次执行这样写，以后的每次执行直接git push 
+		* ps：第一次执行这样写，以后的每次执行直接git push 
 		* ![8.png](https://upload-images.jianshu.io/upload_images/14467401-15ab741b6861937e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
