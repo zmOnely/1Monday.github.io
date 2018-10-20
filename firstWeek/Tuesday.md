@@ -9,7 +9,7 @@
 	* git init 初始化生成git仓库,生成.git文件夹
 	* ![1.png](https://upload-images.jianshu.io/upload_images/14467401-810dc5c3d9e61f12.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* ![2.png](https://upload-images.jianshu.io/upload_images/14467401-86f48207d2fc44f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-	* > 文件名 创建文件，进行操作
+	* touch 文件名 创建文件，进行操作
 	* ![3.png](https://upload-images.jianshu.io/upload_images/14467401-ba9c1c45e7ba7435.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* git add 要上传的文件
 	* git commit -m "提交的信息"
