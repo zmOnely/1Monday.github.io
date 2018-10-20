@@ -53,7 +53,7 @@
 			* 其他命令
 				* :W[文件路径]保存当前文件
 				* :q 如果未对文件做改动则退出
-				* :q! 放弃存储名退出
+				* :q! 放弃存储并退出
 				* :wq或:x 保存退出
 	* 不同模式之间的切换 
 	* ![vi工作模式.png](https://upload-images.jianshu.io/upload_images/14467401-d74af935810e7d9c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
