@@ -7,3 +7,4 @@
 	- [Wednesday(linux)](https://zmonely.github.io/zmOnely/firstWeek/Wednesday)
 	- [Thursday(linux)](https://zmOnely.github.io/zmOnely/firstWeek/Thursday)
 	- [Friday(正则表达式)](https://zmOnely.github.io/zmOnely/firstWeek/Friday)
+ fh
