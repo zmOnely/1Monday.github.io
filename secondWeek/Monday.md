@@ -47,10 +47,10 @@
 			* ps：会把l...l之间的所有换为ppp
 			* ![s9.png](https://upload-images.jianshu.io/upload_images/14467401-263796d98c37c6ed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 * 高级操作 
-	* | 管道符 
+	* `|` 管道符 
 	* 可执行多条指令，将左侧的命令输出结果，作为右侧命令的处理对象
 		* eg：
-		* ll | sed -n 'p'
+		* ll `|` sed -n 'p'
 		* ![s7.png](https://upload-images.jianshu.io/upload_images/14467401-91fcbee59c9da7d6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* {} 可以进行多个动作，动作之间用";"分开
 		* sed '{10,15d;s/hadoop1/h1/}' /etc/passwd
@@ -67,7 +67,7 @@
 		* eg：
 		* sed 's/\([a-z0-9_-]*\):x:\([0-9]*\):\([0-9]*\):.*$/user:\1 userid:\2 groupid:\3/'
 	* 综合使用
-		* ifconfig ens33 | sed -n '/inet /p' | sed 's/inet //' | sed 's/ net.*$//'
+		* ifconfig ens33 `|` sed -n '/inet /p' `|` sed 's/inet //' `|` sed 's/ net.*$//'
 		* 将ip地址提取出来
 		* ![s12.png](https://upload-images.jianshu.io/upload_images/14467401-8a0244223c4dbdac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ### sed和awk都是行读取
