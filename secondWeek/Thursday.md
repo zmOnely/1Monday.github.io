@@ -1,50 +1,50 @@
-### ÅäÖÃjava»·¾³
-* ´ÓÍøÉÏÏÂÔØjdkÑ¹Ëõ°ü
+### é…ç½®javaç¯å¢ƒ
+* ä»ç½‘ä¸Šä¸‹è½½jdkå‹ç¼©åŒ…
 	* wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-  securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u191-  b12/2787e4a523244c269598db4e85c51e0c/jdk-8u191-linux-x64.tar.gz
-* ÓÃÃüÁîÈ¡µ½ÏÂÔØµÄjar°üÃû×Ö
+* ç”¨å‘½ä»¤å–åˆ°ä¸‹è½½çš„jaråŒ…åå­—
 	* jdktar=$(ls | sed -n '/jdk.*gz$/p')
-* ½âÑ¹jar°ü
+* è§£å‹jaråŒ…
 	* tar -zxf $jdktar
-* ½âÑ¹Ö®ºóÉ¾³ıÑ¹Ëõ°ü
+* è§£å‹ä¹‹ååˆ é™¤å‹ç¼©åŒ…
 	* rm -rf $jdktar
-* È¡µ½½âÑ¹ºóµÄ°üµÄÃû×Ö
+* å–åˆ°è§£å‹åçš„åŒ…çš„åå­—
 	* jdkname=$(ls | grep jdk)
-* ½øÈëjdk°üÖĞ
+* è¿›å…¥jdkåŒ…ä¸­
 	* cd $jdkname
-* È¡µ½Æä°üËùÔÚµÄÂ·¾¶
+* å–åˆ°å…¶åŒ…æ‰€åœ¨çš„è·¯å¾„
 	* javahome=$(pwd)
-* ÅäÖÃ»·¾³
+* é…ç½®ç¯å¢ƒ
 	* echo "javahome:"$javahome
 		* echo "export JAVA_HOME=$javahome" >> /etc/profile
 		* echo 'export PATH=$PATH:$JAVA_HOME/bin' >> /etc/profile
 		* echo 'export CLASSPATH=$:CLASSPATH:$JAVA_HOME/lib/' >> /etc/profile
 		* . /etc/profile
-* ÍË³övim£¬ÔËĞĞ.sh¼´¿É
+* é€€å‡ºvimï¼Œè¿è¡Œ.shå³å¯
  
-### ÅäÖÃµ¥µãhadoop
-* java»·¾³  ÅäÖÃjdk
-* ½«hadoopµÄjar.gz°ü½âÑ¹
-* ½«½âÑ¹ºóµÄ°üÒÆµ½hadoopÓÃ»§µÄ ~ Ä¿Â¼ÏÂ
-* ½øÈë hadoop½âÑ¹ºóµÄ°ü
-* ½øÈëbin£¬Ö´ĞĞhadoopÃüÁî£¬¼ì²âÖ´ĞĞ£¬³É¹¦£»
-	* ½øÈë ~ Ä¿Â¼£¬Ö´ĞĞhadoopÃüÁî£¬Ê§°Ü
-* ÅäÖÃhdoop»·¾³±äÁ¿
-* ½øÈë ~ Ä¿Â¼
-* vim .bash_profile£¬ĞŞ¸Ä´ËÎÄ¼ş
+### é…ç½®å•ç‚¹hadoop
+* javaç¯å¢ƒ  é…ç½®jdk
+* å°†hadoopçš„jar.gzåŒ…è§£å‹
+* å°†è§£å‹åçš„åŒ…ç§»åˆ°hadoopç”¨æˆ·çš„ ~ ç›®å½•ä¸‹
+* è¿›å…¥ hadoopè§£å‹åçš„åŒ…
+* è¿›å…¥binï¼Œæ‰§è¡Œhadoopå‘½ä»¤ï¼Œæ£€æµ‹æ‰§è¡Œï¼ŒæˆåŠŸï¼›
+	* è¿›å…¥ ~ ç›®å½•ï¼Œæ‰§è¡Œhadoopå‘½ä»¤ï¼Œå¤±è´¥
+* é…ç½®hdoopç¯å¢ƒå˜é‡
+* è¿›å…¥ ~ ç›®å½•
+* vim .bash_profileï¼Œä¿®æ”¹æ­¤æ–‡ä»¶
 	* export HADOOP_HOME=/home/hadoop/hadoop-2.7.3
 	* PATH=$PATH:$HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
-* Ö´ĞĞhadoop µãÃüÁî
-* ÔÚ ~ ÏÂÖ´ĞĞhadoopÃüÁî£¬¼ì²â£¬³É¹¦
-	* ps£ºµ«ÆäÊµÔÚhadoopÓÃ»§ÏÂÅäÖÃ¸üºÃ
+* æ‰§è¡Œhadoop ç‚¹å‘½ä»¤
+* åœ¨ ~ ä¸‹æ‰§è¡Œhadoopå‘½ä»¤ï¼Œæ£€æµ‹ï¼ŒæˆåŠŸ
+	* psï¼šä½†å…¶å®åœ¨hadoopç”¨æˆ·ä¸‹é…ç½®æ›´å¥½
 
-### ÅäÖÃ hadoopÎ±·Ö²¼Ê½
-* ¹Ø±Õ·À»ğÇ½
+### é…ç½® hadoopä¼ªåˆ†å¸ƒå¼
+* å…³é—­é˜²ç«å¢™
 	* systemctl stop firewalld
-	* systemctl status firewalld ²é¿´ÊÇ·ñ¹Ø±Õ 
-	* ps£ºµ«ÊÇÕâÀïÒªÓÀ¾Ã¹Ø±Õ£¬systemctl disable firewalld
-* ÔÚÅäÖÃÍêµ¥µãhadoopµÄ»ù´¡ÉÏ¼ÌĞø²Ù×÷
+	* systemctl status firewalld æŸ¥çœ‹æ˜¯å¦å…³é—­ 
+	* psï¼šä½†æ˜¯è¿™é‡Œè¦æ°¸ä¹…å…³é—­ï¼Œsystemctl disable firewalld
+* åœ¨é…ç½®å®Œå•ç‚¹hadoopçš„åŸºç¡€ä¸Šç»§ç»­æ“ä½œ
 * cd ~/hadoop-2.7.3/etc/hadoop/
-* ÅäÖÃËÄ´óÎÄ¼ş
+* é…ç½®å››å¤§æ–‡ä»¶
 	* vim core-site.xml 
 		* <property>  
 			* <name>hadoop.tmp.dir</name>  
@@ -84,24 +84,24 @@
 		* <name>mapreduce.framework.name</name>
 		* <value>yarn</value>
     * </property>
-* ¸ñÊ½»¯
+* æ ¼å¼åŒ–
 	* hadoop namenode -format
-* ÅäÖÃ
+* é…ç½®
 	* vim hadoop-env.sh
-    * ½«JAVA_HOME¸ÄÎª(echo $JAVA_HOME)µÄÔËĞĞ½á¹û
-* Æô¶¯
+    * å°†JAVA_HOMEæ”¹ä¸º(echo $JAVA_HOME)çš„è¿è¡Œç»“æœ
+* å¯åŠ¨
 	* start-all.sh
-* ¼ì²âÊÇ·ñ³É¹¦ jps
+* æ£€æµ‹æ˜¯å¦æˆåŠŸ jps
 	* ![jps.png](https://upload-images.jianshu.io/upload_images/14467401-5f8a3a7e807fd295.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-* ¶Ë¿Ú±»½ø³ÌÕ¼ÓÃµÄ½â¾ö·½°¸ 
-	* µÚÒ»²½£º²é¿´¶Ë¿ÚÊÇ·ñ±»Õ¼ÓÃ 
-		* netstat -tunlp|grep ¶Ë¿ÚºÅ
-	* µÚ¶ş²½£ºÈç¹û±»Õ¼ÓÃ£¬½â³ıÕ¼ÓÃ
-		* kill -9 ½ø³ÌºÅ (pid ½ø³ÌºÅ)
-* È¨ÏŞ²»¹»µÄ½â¾ö·½°¸
-	* ²é¿´ÊÇ·ñÖ®Ç°ÓÃrootÓÃ»§µÇÂ¼¹ı£¬sudoÊÔÊÔ
-	* ²é¿´ÈÕÖ¾ 
+* ç«¯å£è¢«è¿›ç¨‹å ç”¨çš„è§£å†³æ–¹æ¡ˆ 
+	* ç¬¬ä¸€æ­¥ï¼šæŸ¥çœ‹ç«¯å£æ˜¯å¦è¢«å ç”¨ 
+		* netstat -tunlp|grep ç«¯å£å·
+	* ç¬¬äºŒæ­¥ï¼šå¦‚æœè¢«å ç”¨ï¼Œè§£é™¤å ç”¨
+		* kill -9 è¿›ç¨‹å· (pid è¿›ç¨‹å·)
+* æƒé™ä¸å¤Ÿçš„è§£å†³æ–¹æ¡ˆ
+	* æŸ¥çœ‹æ˜¯å¦ä¹‹å‰ç”¨rootç”¨æˆ·ç™»å½•è¿‡ï¼Œsudoè¯•è¯•
+	* æŸ¥çœ‹æ—¥å¿— 
 		* cd /home/hadoop/hadoop-2.7.3/logs
 
 
