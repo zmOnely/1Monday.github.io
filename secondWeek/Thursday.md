@@ -45,6 +45,7 @@
 * 在配置完单点hadoop的基础上继续操作
 * cd ~/hadoop-2.7.3/etc/hadoop/
 * 配置四大文件
+    ```
 	* vim core-site.xml 
 		* <property>  
 			* <name>hadoop.tmp.dir</name>  
@@ -54,7 +55,8 @@
 			* <name>fs.defaultFS</name>  
 			* <value>hdfs://192.168.146.128:9000</value>  
 		* </property> 
-
+	```
+	```
 	* vim hdfs-site.xml 
 		* <!-- <property>    
 			* <name>dfs.replication</name>    
@@ -68,7 +70,8 @@
 			* <name>dfs.datanode.data.dir</name>    
 			* <value>file:/home/hadoop/dfs/data</value>    
 		 * </property>
-
+	```
+	```
 	* vim yarn-site.xml 
 		* <property>  
 			* <name>mapreduce.framework.name</name>  
@@ -78,12 +81,16 @@
 			* <name>yarn.nodemanager.aux-services</name>  
 			* <value>mapreduce_shuffle</value>  
 		* </property>
+	```	
 * cp mapred-site.xml.template mapred-site.xml
-* vim mapred-site.xml
-	* <property>
-		* <name>mapreduce.framework.name</name>
-		* <value>yarn</value>
-    * </property>
+	```
+	* vim mapred-site.xml
+		* <property>
+			* <name>mapreduce.framework.name</name>
+			* <value>yarn</value>
+		* </property>
+	```
+	
 * 格式化
 	* hadoop namenode -format
 * 配置
