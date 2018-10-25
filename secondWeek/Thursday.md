@@ -74,31 +74,38 @@
 			* <name>mapreduce.framework.name</name>  
 			* <value>yarn</value>  
 		* </property>   
-		*<property>  
+		* <property>  
 			* <name>yarn.nodemanager.aux-services</name>  
 			* <value>mapreduce_shuffle</value>  
-    </property>
- 
-  cp mapred-site.xml.template mapred-site.xml
-  4.vim mapred-site.xml
-    <property>
-	<name>mapreduce.framework.name</name>
-	<value>yarn</value>
-    </property>
-5.格式化
-  hadoop namenode -format
-6.配置
-  vim hadoop-env.sh
-  将JAVA_HOME改为(echo $JAVA_HOME)的运行结果
-7.启动
-  start-all.sh
-8.检测是否成功 jps
-  ![jps.png](https://upload-images.jianshu.io/upload_images/14467401-5f8a3a7e807fd295.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+		* </property>
+* cp mapred-site.xml.template mapred-site.xml
+* vim mapred-site.xml
+	* <property>
+		* <name>mapreduce.framework.name</name>
+		* <value>yarn</value>
+    * </property>
+* 格式化
+	* hadoop namenode -format
+* 配置
+	* vim hadoop-env.sh
+    * 将JAVA_HOME改为(echo $JAVA_HOME)的运行结果
+* 启动
+	* start-all.sh
+* 检测是否成功 jps
+	* ![jps.png](https://upload-images.jianshu.io/upload_images/14467401-5f8a3a7e807fd295.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-netstat -tunlp|grep 端口号
-查看端口是否被占用
-pid 进程号
-kill -9 进程号
+* 端口被进程占用的解决方案 
+	* 第一步：查看端口是否被占用 
+		* netstat -tunlp|grep 端口号
+	* 第二步：如果被占用，解除占用
+		* kill -9 进程号 (pid 进程号)
+* 权限不够的解决方案
+	* 查看是否之前用root用户登录过，sudo试试
+	* 查看日志 
+		* cd /home/hadoop/hadoop-2.7.3/logs
+
+
+
 
 
 
