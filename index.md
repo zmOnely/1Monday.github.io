@@ -10,9 +10,9 @@
 - SecondWeek
 	- [Monday(sed awk)](https://zmonely.github.io/zmOnely/secondWeek/Monday)
 	- [Tuesday(shell编程)](https://zmonely.github.io/zmOnely/secondWeek/Tuesday)
-	- [Wednesday(jdk的.sh等三个案例)](https://zmonely.github.io/zmOnely/secondWeek/Tuesday)
-	- [Thursday(hadoop单点和伪分布式的配置)](https://zmonely.github.io/zmOnely/secondWeek/Tuesday)
-	- [Friday(shell编程)](https://zmonely.github.io/zmOnely/secondWeek/Tuesday)
+	- [Wednesday(jdk的.sh等三个案例)](https://zmonely.github.io/zmOnely/secondWeek/Wednesday)
+	- [Thursday(hadoop单点和伪分布式的配置)](https://zmonely.github.io/zmOnely/secondWeek/Thursday)
+	- [Friday(shell编程)](https://zmonely.github.io/zmOnely/secondWeek/Friday)
 	
 	
  

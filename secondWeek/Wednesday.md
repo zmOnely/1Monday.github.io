@@ -1,18 +1,21 @@
-### ����һ
-* �Զ���װjava����(���°�������)
+### 案例一
+* 自动安装java环境(从下包到配置)
+- [执行文件链接](https://zmonely.github.io/zmOnely/secondWeek/javaPath.sh) 
 	* cd /home/hadoop/bin
-	* > creatjava.sh
-	* vim creatjava.sh
-	* ��vim��д����
+	* > javaPath.sh
+	* vim javaPath.sh
+	* 在vim里写内容
 	```
 	#!/bin/bash
-	echo "����ҳ������ѹ����"
-	wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a523244c269598db4e85c51e0c/jdk-8u191-linux-x64.tar.gz
-	echo "��ѹ�ļ���"
+	echo "从网页上下载压缩包"
+	wget --no-check-certificate --no-cookies --header 
+	"Cookie: oraclelicense=accept-securebackup-cookie" 
+	http://download.oracle.com/otn-pub/java/jdk/8u191-b12/2787e4a523244c269598db4e85c51e0c/jdk-8u191-linux-x64.tar.gz
+	echo "解压文件夹"
 	javatar=$(ls | sed -n '/jdk.*gz$/p')
 	tar -zxf $javatar
 	rm -rf $javatar
-	echo "���û�������"
+	echo "配置环境变量"
 	jdkname=$(ls | grep jdk)
 	cd $jdkname
 	javaname=$(pwd)
@@ -21,6 +24,40 @@
 	echo 'export CLASSPATH=$:CLASSPATH:$JAVA_HOME/lib/' >>/etc/profile
 	. /etc/profile
 	```
+### 案例二
+* 自动创建30个用户(可自选喜欢的前缀)
+	* cd /home/hadoop/bin
+	* > creat30user.sh
+	* vim creat30user.sh
+	* 在vim里写内容
+	```
+	#!/bin/bash
+	read -p "请输入要创建的用户名的前缀" user
+	echo "用户名的前缀是："$user
+	for((i=1;i<=30;i=i+1))
+	do
+		useradd $user$i
+		echo "用户$user$i 已创建"
+		echo "hadoop" | passwd $user$i --stdin
+	done
+	```
+### 案例三
+* 自动解压当前目录下所有压缩包
+	* cd /home/hadoop/bin
+	* > zltar.sh
+	* vim zltar.sh
+	* 在vim里写内容
+	```
+	#!/bin/bash
+	echo $1
+	ls $1/*.gz > /home/hadoop/bin/tars.log
+	for files in $(cat /home/hadoop/bin/tars.log)
+	do
+		echo "file is:"$files
+		tar -zxf $files
+	done
+	```
+	
 
 
 
