@@ -1,8 +1,9 @@
 ### 案例一
 * 自动安装java环境(从下包到配置)
 - [执行文件链接](https://zmonely.github.io/zmOnely/secondWeek/javaPath.sh) 
+* ！！！注意：点击就开始安装，请慎重！！！
 	* cd /home/hadoop/bin
-	* > javaPath.sh
+	* touch javaPath.sh
 	* vim javaPath.sh
 	* 在vim里写内容
 	```
@@ -26,8 +27,10 @@
 	```
 ### 案例二
 * 自动创建30个用户(可自选喜欢的前缀)
+- [执行文件链接](https://zmonely.github.io/zmOnely/secondWeek/create30User.sh) 
+* ！！！注意：点击就开始创建，请慎重！！！
 	* cd /home/hadoop/bin
-	* > creat30user.sh
+	* touch creat30user.sh
 	* vim creat30user.sh
 	* 在vim里写内容
 	```
@@ -43,8 +46,10 @@
 	```
 ### 案例三
 * 自动解压当前目录下所有压缩包
+- [执行文件链接](https://zmonely.github.io/zmOnely/secondWeek/zltar.sh) 
+* ！！！注意：点击就开始创建，请慎重！！！
 	* cd /home/hadoop/bin
-	* > zltar.sh
+	* touch zltar.sh
 	* vim zltar.sh
 	* 在vim里写内容
 	```
