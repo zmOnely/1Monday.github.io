@@ -7,13 +7,10 @@
 	- [Wednesday(linux)](https://zmonely.github.io/zmOnely/firstWeek/Wednesday)
 	- [Thursday(linux)](https://zmOnely.github.io/zmOnely/firstWeek/Thursday)
 	- [Friday(正则表达式)](https://zmOnely.github.io/zmOnely/firstWeek/Friday)
-<<<<<<< HEAD
-	
- 
-=======
 - SecondWeek
 	- [Monday(sed awk)](https://zmonely.github.io/zmOnely/secondWeek/Monday)
+	- [Tuesday(shell编程)](https://zmonely.github.io/zmOnely/secondWeek/Tuesday)
 	
 	
  
->>>>>>> 1a1ba480858a4f671d857f5ee51a68caac757330
+
