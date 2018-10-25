@@ -48,7 +48,7 @@
 	* vim core-site.xml 
 		* <property>  
 			* <name>hadoop.tmp.dir</name>  
-			* <value>/usr/local/hadoop/tmp</value>
+			* <value>/home/hadoop/tmp</value>
 		* </property>  
 		* <property>  
 			* <name>fs.defaultFS</name>  
@@ -62,11 +62,11 @@
 		* </property> -->   
 		* <property>    
 			* <name>dfs.namenode.name.dir</name>    
-			* <value>file:/usr/local/hadoop/dfs/name</value>    
+			* <value>file:/home/hadoop/dfs/name</value>    
 		* </property>    
 		* <property>    
 			* <name>dfs.datanode.data.dir</name>    
-			* <value>file:/usr/local/hadoop/dfs/data</value>    
+			* <value>file:/home/hadoop/dfs/data</value>    
 		 * </property>
 
 	* vim yarn-site.xml 
