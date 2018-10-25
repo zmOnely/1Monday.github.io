@@ -44,7 +44,7 @@
 				* cut  <选项>   文件
 			* -d 指定分隔符
 			* -f 依据 -d 的分隔字符将一段信息分割成为数段，用 -f 取出第几段的意思
-				* echo $PATH | cut -d ':' -f 5 按照：来分组，找出第五组
+				* echo $PATH `|` cut -d ':' -f 5 按照：来分组，找出第五组
 			* -c 指定几个字符对应的列			
 
 	* 命令的别名
@@ -61,7 +61,7 @@
 			* 将左侧的命令输出结果，作为右侧命令的处理对象
 			* 格式
 				* cmd1 `|` cmd2 [cmd3 `|` cmdn]
-			* cat test.txt | wc -l
+			* cat test.txt `|` wc -l
 		* 通配符
 			* ![1.png](https://upload-images.jianshu.io/upload_images/14467401-1ca86758cff223cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 		* 其他特殊符号
@@ -107,6 +107,18 @@
 * 算术运算
 	* eg：（2+3）x4
 	* expr `expr 2 + 3` \* 4
+* 条件测试
+	* test命令
+	* 用途
+		* 测试特定的表达式是否成立，当条件成立时，测试语句的返回值为0，否则为其他数值
+	* 格式
+		* test 条件表达式
+		* [ 条件表达式 ]
+	* 文件测试
+		* 格式 
+			* [  操作符  文件或目录  ]
+			* ps：
+	
 
 
 
