@@ -95,7 +95,7 @@
 		* ![5.png](https://upload-images.jianshu.io/upload_images/14467401-e2dbdc0f79918261.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
     * awk -F ':' 'BEGIN{print "line col uid user"} {printf("%3s %s %4s %s\n",NR,NF,$3,$1)} END{print"-----"FILENAME"-----"}' /etc/passwd
 		* ![6.png](https://upload-images.jianshu.io/upload_images/14467401-b26c3ff935834fdb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-	* ll | awk 'BEGIN{size=0} {size+=$5} END{print size}'
+	* ll `|` awk 'BEGIN{size=0} {size+=$5} END{print size}'
 		* ![7.png](https://upload-images.jianshu.io/upload_images/14467401-e7eeab120630c478.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* awk 'BEGIN{count=0} {count++} END{print count}' /etc/passwd
 		* ![8.png](https://upload-images.jianshu.io/upload_images/14467401-62bdca0bd51fa242.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
