@@ -1,5 +1,4 @@
-## shell编程
-* [相关参考ppt，需要请点击，进行下载~~](https://zmonely.github.io/zmOnely/secondWeek/shell.ppt)
+## shell编程    [相关参考ppt，需要请点击，进行下载~~](https://zmonely.github.io/zmOnely/secondWeek/shell.ppt)
 * shell简介
 	* 概述
 		* Shell是一个功能强大的编程语言，易编写，易调试，灵活性较强
