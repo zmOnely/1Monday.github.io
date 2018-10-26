@@ -222,6 +222,7 @@
 		```
 	* case语句结构
 		* 语法
+		
 		```
 		case  变量值  in
 		模式1)
@@ -231,12 +232,13 @@
 			命令序列2
 			;;
 　			……
-		* )
+		*)
 			默认命令序列
 		esac
+		
 		```
 		
-		* [shell编程](https://zmonely.github.io/zmOnely/secondWeek/shell)
+		* [shell编程](https://zmonely.github.io/zmOnely/secondWeek/shell.ppt)
 		
 
 			
