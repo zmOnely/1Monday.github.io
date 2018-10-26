@@ -2,13 +2,13 @@
 * 从网上下载jdk压缩包
 	* wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-  securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u191-  b12/2787e4a523244c269598db4e85c51e0c/jdk-8u191-linux-x64.tar.gz
 * 用命令取到下载的jar包名字
-	* jdktar=$(ls | sed -n '/jdk.*gz$/p')
+	* jdktar=$(ls `|` sed -n '/jdk.*gz$/p')
 * 解压jar包
 	* tar -zxf $jdktar
 * 解压之后删除压缩包
 	* rm -rf $jdktar
 * 取到解压后的包的名字
-	* jdkname=$(ls | grep jdk)
+	* jdkname=$(ls `|` grep jdk)
 * 进入jdk包中
 	* cd $jdkname
 * 取到其包所在的路径
@@ -53,7 +53,7 @@
 		* </property>  
 		* <property>  
 			* <name>fs.defaultFS</name>  
-			* <value>hdfs://192.168.146.128:9000</value>  
+			* <value>hdfs://(namenode的ip地址):9000</value>  
 		* </property> 
 	```
 	```
@@ -91,7 +91,7 @@
 		* </property>
 	```
 	
-* 格式化
+* 格式化(对namenode的储存位置)
 	* hadoop namenode -format
 * 配置
 	* vim hadoop-env.sh
@@ -101,15 +101,17 @@
 * 检测是否成功 jps
 	* ![jps.png](https://upload-images.jianshu.io/upload_images/14467401-5f8a3a7e807fd295.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-* 端口被进程占用的解决方案 
-	* 第一步：查看端口是否被占用 
-		* netstat -tunlp|grep 端口号
-	* 第二步：如果被占用，解除占用
-		* kill -9 进程号 (pid 进程号)
 * 权限不够的解决方案
 	* 查看是否之前用root用户登录过，sudo试试
 	* 查看日志 
 		* cd /home/hadoop/hadoop-2.7.3/logs
+		* ls	
+* 端口被进程占用的解决方案 
+	* 第一步：查看占用端口的进程
+		* netstat -tunlp|grep 端口号
+	* 第二步：如果被占用，解除被占用的端口
+		* kill -9 进程号 (pid 进程号)
+
 
 
 

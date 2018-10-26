@@ -117,8 +117,60 @@
 	* 文件测试
 		* 格式 
 			* [  操作符  文件或目录  ]
-			* ps：
-	
+			* ps：[]前后一定要有空格！！
+		* 常用测试操作符	
+		```
+		-d：测试是否为目录（Directory）
+		-e：测试目录或文件是否存在（Exist）
+		-f：测试是否为文件（File）
+		-b:  该文件是否存在且为一个块设备文件
+		-c:  该文件是否存在且为一个字符设备文件
+		-S: 该文件是否存在且为一个Socket文件
+		-p:  该文件是否存在且为一个FIFO(pipe)文件
+		-L:  该文件是否存在且为一个链接文件
+		```
+		* eg：（返回1表示条件不成立，返回0表示条件成立）
+		```
+		[root@master ~]# [ -d /etc/hosts ]
+		[root@master ~]# echo $?
+		1
+		[root@master ~]# [ -e /etc/hosts ]
+		[root@master ~]# echo $?
+		0
+		```
+	* 条件测试
+		* 文件权限测试
+			* 格式
+				* [  操作符  文件或目录  ]
+			* 常用测试操作符	
+			```
+			-r：测试当前用户是否有权限读取（Read）
+			-w：测试当前用户是否有权限写入（Write）
+			-x：测试当前用户是否有权限执行（eXcute）
+			-u： 测试该文件是否存在且具有suid属性
+			-g： 测试该文件是否存在且具有sgid属性
+			-k： 测试该文件是否存在且具有sticky bit属性
+			-s ：测试该文件是否存在且为非空文件
+			```
+			```
+			* eg：查看 /root/install.log 是否具有读的权限，有的话，输出yes，没有则输出no
+			[ -r /root/install.log ] && echo "yes" || "echo no"
+			```	
+	* 数值比较
+		* 格式
+			* [  整数1  操作符  整数2  ]
+		* 常用操作符
+		```
+		-eq：等于（Equal）
+		-ne：不等于（Not Equal）
+		-gt：大于（Greater Than）
+		-lt：小于（Lesser Than）
+		-le：小于或等于（Lesser or Equal）
+		-ge：大于或等于（Greater or Equal）
+		```
+		```
+		[ $2 -gt 1 ] && echo "too many"
+		```
 
 
 
