@@ -171,8 +171,71 @@
 		```
 		[ $2 -gt 1 ] && echo "too many"
 		```
+	* 字符串比较
+		* 格式
+			* [ 字符串1  =  字符串2 ]
+			* [ 字符串1  != 字符串2 ]
+			* [ -z  字符串 ]
+		* 常用操作符
+		```
+		=：字符串内容相同
+		!=：字符串内容不同，! 号表示相反的意思
+		-z：字符串内容为空
+		-n： string 判定字符串是否为非空，若string为空字符串，则为false
+		ps： -n 亦可省略 
 
-
+		```
+		```
+		aa=abc  bb=123
+		[ $aa == $bb ] && echo "yes" || echo "no"
+		[ $aa != $bb ] && echo "yes" || echo "no"
+		name=Tammy
+		[ -z $name ] && echo "yes" || echo "no"
+		[ -n $name ] && echo "yes" || echo "no"
+		```
+* 控制流程
+	* if语句结构
+		* 单分支结构
+			* 语法
+			* if  条件测试操作
+				* then   命令序列
+			* fi
+		* 双分支结构
+			* 语法
+			* if  条件测试操作
+				* then   命令序列
+				* else   命令序列
+			* fi
+		* 多分支结构		
+		```
+		#!/bin/bash
+		read -p "please input your name:" NAME
+		if [ $NAME = root ]
+        then
+                echo "hello ${NAME},  welcome !"
+        elif [ $NAME = hadoop]
+                then
+                        echo "hello ${NAME},  welcome !"
+        else
+                echo "SB, get out here !"
+		fi
+		```
+	* case语句结构
+		* 语法
+		```
+		case  变量值  in
+		模式1)
+			命令序列1
+			;;
+		模式2)
+			命令序列2
+			;;
+　			……
+		* )
+			默认命令序列
+		esac
+		```
+		
 
 			
 	
