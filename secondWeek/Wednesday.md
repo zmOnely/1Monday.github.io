@@ -47,7 +47,7 @@
 ### 案例三
 * 自动解压当前目录下所有压缩包
 - [执行文件链接](https://zmonely.github.io/zmOnely/secondWeek/zltar.sh) 
-* ！！！注意：点击就开始创建，请慎重！！！
+* ！！！注意：点击就开始解压，请慎重！！！
 	* cd /home/hadoop/bin
 	* touch zltar.sh
 	* vim zltar.sh
