@@ -70,14 +70,14 @@
 		* ifconfig ens33 `|` sed -n '/inet /p' `|` sed 's/inet //' `|` sed 's/ net.*$//'
 		* 将ip地址提取出来
 		* ![s12.png](https://upload-images.jianshu.io/upload_images/14467401-8a0244223c4dbdac.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-### sed和awk都是行读取
+###### sed和awk都是行读取
 ## awk
-### awk常规格式
+* awk常规格式
 * 格式
 	* awk options选项 'command' filename
 * 选项
 	* -F 设置分隔符
-### awk的拓展格式	
+* awk的拓展格式	
 * 格式
 	* awk options选项 'BEGIN{} command END{}' filename
 * 命令
