@@ -46,49 +46,53 @@
 * cd ~/hadoop-2.7.3/etc/hadoop/
 * 配置四大文件
     ```
-	* vim core-site.xml 
-		* <property>  
-			* <name>hadoop.tmp.dir</name>  
-			* <value>/home/hadoop/tmp</value>
-		* </property>  
-		* <property>  
-			* <name>fs.defaultFS</name>  
-			* <value>hdfs://(namenode的ip地址):9000</value>  
-		* </property> 
+	vim core-site.xml 
+		<property>  
+			<name>hadoop.tmp.dir</name>  
+			<value>/home/hadoop/tmp</value>
+		</property>  
+		<property>  
+			<name>fs.defaultFS</name>  
+			<value>hdfs://(namenode的ip地址):9000</value>  
+		</property> 
 	```
+	
+	
 	```
-	* vim hdfs-site.xml 
-		* <!-- <property>    
-			* <name>dfs.replication</name>    
-			* <value>1</value>    
-		* </property> -->   
-		* <property>    
-			* <name>dfs.namenode.name.dir</name>    
-			* <value>file:/home/hadoop/dfs/name</value>    
-		* </property>    
-		* <property>    
-			* <name>dfs.datanode.data.dir</name>    
-			* <value>file:/home/hadoop/dfs/data</value>    
-		 * </property>
+	vim hdfs-site.xml 
+		<!-- <property>    
+			<name>dfs.replication</name>    
+			<value>1</value>    
+		</property> -->   
+		<property>    
+			<name>dfs.namenode.name.dir</name>    
+			<value>file:/home/hadoop/dfs/name</value>    
+		</property>    
+		<property>    
+			<name>dfs.datanode.data.dir</name>    
+			<value>file:/home/hadoop/dfs/data</value>    
+		</property>
 	```
+	
+	
 	```
-	* vim yarn-site.xml 
-		* <property>  
-			* <name>mapreduce.framework.name</name>  
-			* <value>yarn</value>  
-		* </property>   
-		* <property>  
-			* <name>yarn.nodemanager.aux-services</name>  
-			* <value>mapreduce_shuffle</value>  
-		* </property>
+	vim yarn-site.xml 
+		<property>  
+			<name>mapreduce.framework.name</name>  
+			<value>yarn</value>  
+		</property>   
+		<property>  
+			<name>yarn.nodemanager.aux-services</name>  
+			<value>mapreduce_shuffle</value>  
+		</property>
 	```	
 * cp mapred-site.xml.template mapred-site.xml
 	```
-	* vim mapred-site.xml
-		* <property>
-			* <name>mapreduce.framework.name</name>
-			* <value>yarn</value>
-		* </property>
+	vim mapred-site.xml
+		<property>
+			<name>mapreduce.framework.name</name>
+			<value>yarn</value>
+		</property>
 	```
 	
 * 格式化(对namenode的储存位置)
@@ -108,7 +112,7 @@
 		* ls	
 * 端口被进程占用的解决方案 
 	* 第一步：查看占用端口的进程
-		* netstat -tunlp|grep 端口号
+		* netstat -tunlp `|` grep 端口号
 	* 第二步：如果被占用，解除被占用的端口
 		* kill -9 进程号 (pid 进程号)
 
