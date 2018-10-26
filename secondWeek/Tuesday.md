@@ -236,6 +236,8 @@
 		esac
 		```
 		
+		* [shell编程](https://zmonely.github.io/zmOnely/secondWeek/shell)
+		
 
 			
 	
