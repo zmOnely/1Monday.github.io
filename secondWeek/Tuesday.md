@@ -68,7 +68,7 @@
 			* ![2.png](https://upload-images.jianshu.io/upload_images/14467401-ca3c2af0f3ab1151.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 		* 常用热键
 			* ![5.png](https://upload-images.jianshu.io/upload_images/14467401-608b1a32f036d03e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-### shell编程
+* shell编程
 * 概述
 	*  Linux环境中，Shell不仅是常用的命令解释程序，而且是高级编程语言，用户可以通过编写
 	Shell程序来完成大量任务的自动化
