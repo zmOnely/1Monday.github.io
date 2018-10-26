@@ -223,7 +223,6 @@
 		```
 	* case语句结构
 		* 语法
-		
 		```
 		case  变量值  in
 		模式1)
@@ -236,8 +235,94 @@
 		*)
 			默认命令序列
 		esac
+		```
+		
 		
 		```
+		case $1 in
+		start)
+			echo "starting"
+			;;
+		stop)
+			echo "stoping"
+			;;
+		*)
+			echo "Usage: {start|stop} “
+			esac
+		```
+	* for语句结构
+		* 语法
+		```
+		第一种
+		for 变量名 in 取值列表
+		do
+　 			命令序列
+		done
+		
+		第二种
+		for (( 初始值; 限制值; 执行步阶 )) 
+		do 
+			程序段 
+		done
+		初始值：某个变量在循环当中的起始值，直接以类似 i=1 设定好
+		限制值：当变量的值在这个限制值的范围内，就继续进行循环。例如 i<=100
+		执行步阶：每作一次循环时，变量的变化量。例如 i=i+1
+		```
+		
+		```
+		第一种
+		for N in 1 2 3
+		do
+			echo $N
+		done
+		或
+		for N in 1 2 3; do echo $N; done
+		或
+		for N in {1..3}; do echo $N; done
+		
+		第二种
+		for ((i = 0; i <= 5; i++))
+		do
+			echo "welcome $i times"
+		done
+		或
+		for ((i = 0; i <= 5; i++)); do echo "welcome $i times"; done
+		```
+	* while语句结构
+		* 语法
+		```
+		while 条件测试操作
+		do
+			命令序列
+		done
+		```
+		
+		
+		```
+		i=1
+		while ((i<=3))
+		do
+			echo $i
+		let i++
+		done
+		```
+* shell自定义函数
+	* 语法
+	```
+	[ function ] funname [()]
+	{
+    	action;
+    	[return int;]
+	}
+	ps：function start()，function start，start()都可以，但是不能将[]里的项都省去
+	```
+	* 注意
+		* 必须在调用函数地方之前，先声明函数，shell脚本是逐行运行。不会像其它语言一样先预编译
+		* 函数返回值，只能通过$? 系统变量获得，可以显示加：return 返回，如果不加，将以最后一条命令运行结果，作为返回值。 return后跟数值n(0-255)
+
+		
+		
+		
 		
 		
 		
