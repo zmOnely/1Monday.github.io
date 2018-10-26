@@ -187,6 +187,7 @@
 
 		```
 		```
+		eg：
 		aa=abc  bb=123
 		[ $aa == $bb ] && echo "yes" || echo "no"
 		[ $aa != $bb ] && echo "yes" || echo "no"
@@ -209,6 +210,7 @@
 			* fi
 		* 多分支结构		
 		```
+		eg：
 		#!/bin/bash
 		read -p "please input your name:" NAME
 		if [ $NAME = root ]
@@ -239,6 +241,7 @@
 		
 		
 		```
+		eg：
 		case $1 in
 		start)
 			echo "starting"
@@ -270,6 +273,7 @@
 		```
 		
 		```
+		eg：
 		第一种
 		for N in 1 2 3
 		do
@@ -299,6 +303,7 @@
 		
 		
 		```
+		eg：
 		i=1
 		while ((i<=3))
 		do
@@ -317,7 +322,7 @@
 	ps：function start()，function start，start()都可以，但是不能将[]里的项都省去
 	```
 	* 注意
-		* 必须在调用函数地方之前，先声明函数，shell脚本是逐行运行。不会像其它语言一样先预编译
+		* 必须在调用函数地方之前，先声明函数，shell脚本是逐行运行，不会像其它语言一样先预编译
 		* 函数返回值，只能通过$? 系统变量获得，可以显示加：return 返回，如果不加，将以最后一条命令运行结果，作为返回值。 return后跟数值n(0-255)
 
 		
