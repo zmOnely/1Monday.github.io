@@ -12,7 +12,7 @@
 	- [Tuesday(shell编程)](https://zmonely.github.io/zmOnely/secondWeek/Tuesday)
 	- [Wednesday(配置jdk.sh等三个案例)](https://zmonely.github.io/zmOnely/secondWeek/Wednesday)
 	- [Thursday(hadoop单点和伪分布式的配置)](https://zmonely.github.io/zmOnely/secondWeek/Thursday)
-	- [Friday(hadoop全分布式)](https://zmonely.github.io/zmOnely/secondWeek/Friday)
+	- [Friday(hadoop完全分布式)](https://zmonely.github.io/zmOnely/secondWeek/Friday)
 	
 	
  
