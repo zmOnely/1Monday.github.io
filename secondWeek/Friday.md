@@ -1,4 +1,4 @@
-##hadoop完全分布式的配置与使用
+## hadoop完全分布式的配置与使用
 * 准备工作
 	* 新建一台虚拟机，作为namenode使用
 	```
@@ -74,6 +74,7 @@
 	5.cd .ssh
 	6.ll ，可以查看id_rsa.pub
 	7.免密操作完成后，进行重启检测
+	```
 	
 	* 有问题记得先查看日志呦~~
 	* cat ~/hadoop-2.7.3/logs/hadoop-hadoop-datanode-localhost.localdomain.log
