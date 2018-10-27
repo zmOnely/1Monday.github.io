@@ -55,15 +55,13 @@
 	8.vim slaves 将datanode的ip写入里面，进行注册，如图
 	```
 	![slaves.png](https://upload-images.jianshu.io/upload_images/14467401-52c6a76194aa015f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-	```
-	9.sudo vim /etc/hosts 将以下信息填入，如图
-	```
+	* 9.sudo vim /etc/hosts 将以下信息填入，如图
 	![hosts.png](https://upload-images.jianshu.io/upload_images/14467401-aa8f22e995f29ac3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-	```
-	10.重启后，查看网页的"Live Nodes"或者hdfs dfsadmin -report即可
-	```
+	* 10.重启后，查看网页的"Live Nodes"或者hdfs dfsadmin -report即可
+	
 	
 	* 免密问题
+	
 	```
 	在namenode中操作
 	1.ssh-keygen  生成密钥
@@ -78,6 +76,8 @@
 	6.ll ，可以查看id_rsa.pub
 	7.免密操作完成后，进行重启检测
 	```
+	
+	
 	
 	* 查看日志寻找错误源	
 		* cat ~/hadoop-2.7.3/logs/hadoop-hadoop-datanode-localhost.localdomain.log
