@@ -77,6 +77,9 @@
 	5.cd .ssh
 	6.ll ，可以查看id_rsa.pub
 	7.免密操作完成后，进行重启检测
+	ps：ssh-keygen  产生公钥与私钥对；
+		ssh-copy-id 将本机的公钥复制到远程机器的authorized_keys文件中，
+		ssh-copy-id也能让你有到远程机器的home，~./ssh，和 ~/.ssh/authorized_keys的权利
 	```
 	
 	
