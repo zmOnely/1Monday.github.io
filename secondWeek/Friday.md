@@ -79,6 +79,8 @@
 	7.免密操作完成后，进行重启检测
 	```
 	
+	
+	
 	* 查看日志寻找错误源
 	```
 	cat ~/hadoop-2.7.3/logs/hadoop-hadoop-datanode-localhost.localdomain.log
