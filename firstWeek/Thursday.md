@@ -1,4 +1,5 @@
 * vi编辑器
+* [相关参考ppt，需要请点击，进行下载~~](https://zmonely.github.io/zmOnely/firstWeek/vi.ppt)
 	* 概述
 	* vi编辑器是Linux中常用的文本编辑器
 		* vi编辑器
