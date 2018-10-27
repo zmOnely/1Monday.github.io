@@ -62,6 +62,8 @@
 		tar -zxf $files
 	done
 	```
+* [Hadoop基础ppt，需要请点击，进行下载~~](https://zmonely.github.io/zmOnely/secondWeek/Hadoop.ppt)
+	
 	
 
 
