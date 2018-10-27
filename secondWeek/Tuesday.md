@@ -291,7 +291,7 @@
 		for N in 1 2 3
 		do
 			echo $N
-		done
+		dones
 		或
 		for N in 1 2 3; do echo $N; done
 		或
