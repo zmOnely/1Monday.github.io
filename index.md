@@ -5,12 +5,12 @@
 	- [Monday(git)](https://zmonely.github.io/zmOnely/firstWeek/Monday)
 	- [Tuesday(git)](https://zmonely.github.io/zmOnely/firstWeek/Tuesday)
 	- [Wednesday(linux)](https://zmonely.github.io/zmOnely/firstWeek/Wednesday)
-	- [Thursday(linux)](https://zmOnely.github.io/zmOnely/firstWeek/Thursday)
+	- [Thursday(vi&&权限)](https://zmOnely.github.io/zmOnely/firstWeek/Thursday)
 	- [Friday(正则表达式)](https://zmOnely.github.io/zmOnely/firstWeek/Friday)
 - SecondWeek
 	- [Monday(sed awk)](https://zmonely.github.io/zmOnely/secondWeek/Monday)
 	- [Tuesday(shell编程)](https://zmonely.github.io/zmOnely/secondWeek/Tuesday)
-	- [Wednesday(配置jdk.sh等三个案例)](https://zmonely.github.io/zmOnely/secondWeek/Wednesday)
+	- [Wednesday(自动化sh文件,Hadoop基础)](https://zmonely.github.io/zmOnely/secondWeek/Wednesday)
 	- [Thursday(hadoop单点和伪分布式的配置)](https://zmonely.github.io/zmOnely/secondWeek/Thursday)
 	- [Friday(hadoop完全分布式)](https://zmonely.github.io/zmOnely/secondWeek/Friday)
 	
