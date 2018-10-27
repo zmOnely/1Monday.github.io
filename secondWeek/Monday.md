@@ -8,9 +8,9 @@
 		* sed -n 'p' lll.txt
 		* ![s1.png](https://upload-images.jianshu.io/upload_images/14467401-eaee043e6b8bd686.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 		* sed -n '3p' lll.txt 
+		* ![s2.png](https://upload-images.jianshu.io/upload_images/14467401-991ff68026be7c25.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 		* sed -n '1,5p' lll.txt
 		* sed -n '5，$p' lll.txt 
-		* ![s2.png](https://upload-images.jianshu.io/upload_images/14467401-991ff68026be7c25.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 			* ps：数字代表输出第几行
 		* sed -n '1~2p' lll.txt
 			* 输出第一行第三行第五行...
@@ -19,21 +19,21 @@
 			* 第一个数字含义起始行，第二个数字是跨多少行	
 	* a 向下新增 （代表向第一行后面，也就是第二行插入）		
 		* sed '1a tttttttttt ' lll.txt
-		* sed '1,5a tttttttttt ' lll.txt
 		* ![s3.png](https://upload-images.jianshu.io/upload_images/14467401-f5ee363ddd03f763.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+		* sed '1,5a tttttttttt ' lll.txt
 			* ps；不写数字就是往每一行的后面插入一行
 	* i 向上新增	
 		* sed 'i 1111111111' lll.txt
+		* ![s4.png](https://upload-images.jianshu.io/upload_images/14467401-602a1658446f459c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 		* sed '2i 1111111111' lll.txt
 		* sed '2,$i 1111111111' lll.txt
-		* ![s4.png](https://upload-images.jianshu.io/upload_images/14467401-602a1658446f459c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* c 替换 可以分行替换
 		* sed 'c 1121111111' lll.txt
 		* ![s5.png](https://upload-images.jianshu.io/upload_images/14467401-e80d71596db64a18.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* d 删除
 		* sed 'd' lll.txt  全删
-		* sed '1,3d' lll.txt
 		* ![s6.png](https://upload-images.jianshu.io/upload_images/14467401-96c475b5c918d274.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+		* sed '1,3d' lll.txt
 		* sed '/^$/d' lll.txt 删除空行
 		* ![s11.png](https://upload-images.jianshu.io/upload_images/14467401-fd162290829d0827.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* s 取代 经常配合正则进行操作
@@ -87,7 +87,8 @@
 		* ps：输出行号，列数，每一行的信息都是以“:”来进行分组的，$1表示第一组，也就是用户名
 		* ![2.png](https://upload-images.jianshu.io/upload_images/14467401-c85a79d4b675fe28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* awk -F ':' '{printf("line:%3s col:%s user:%s\n",NR,NF,$1)}' /etc/passwd
-		* ps：格式进行对齐
+		* ps：格式进行对齐；
+		      print和printf的区别：print直接输出；printf可以设置格式，在()里
 		* ![3.png](https://upload-images.jianshu.io/upload_images/14467401-986ffa6321d552ca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* awk -F ':' '$1~/^h.*/{printf ("line:%3s col:%s uid:%4s user:%s\n",NR,NF,$3,$1)}' /etc/passwd	
 		* ![4.png](https://upload-images.jianshu.io/upload_images/14467401-ba788a1552df8d52.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
