@@ -42,9 +42,8 @@
 	```
 	在namenode中操作
 	1.cd /home/hadoop/dfs/data/current
-	2.ls
-	3.查看BP...
-	4.vim VERSION，查看ID是否匹配
+	2.ls 查看BP...
+	3.vim VERSION 查看ID是否匹配
 	```
 	
 	
@@ -52,17 +51,15 @@
 	
 	
 	```
-	5.若匹配，继续下一步
-	6.将namenode和datanode都关闭
-	hadoop-daemon.sh stop namenode(datanode)
-	7.cd /home/hadoop/hadoop-2.7.3/etc/hadoop
-	8.vim slaves 将datanode的ip写入里面，进行注册，如图
+	4.若匹配，继续下一步
+	5.cd /home/hadoop/hadoop-2.7.3/etc/hadoop
+	6.vim slaves 将datanode的ip写入里面，进行注册，如图
 	```
 	
 	![slaves.png](https://upload-images.jianshu.io/upload_images/14467401-52c6a76194aa015f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-	* 9.sudo vim /etc/hosts 将以下信息填入，如图
+	* 7.sudo vim /etc/hosts 将以下信息填入，如图
 	![hosts.png](https://upload-images.jianshu.io/upload_images/14467401-aa8f22e995f29ac3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-	* 10.重启后，查看网页的"Live Nodes"或者hdfs dfsadmin -report即可
+	* 8.重启后，查看网页的"Live Nodes"或者hdfs dfsadmin -report即可
 	
 	
 	* 免密问题
