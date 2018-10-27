@@ -46,7 +46,11 @@
 	3.查看BP...
 	4.vim VERSION，查看ID是否匹配
 	```
+	
+	
 	![VERSION.png](https://upload-images.jianshu.io/upload_images/14467401-b922f74a8a92188a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	
+	
 	```
 	5.若匹配，继续下一步
 	6.将namenode和datanode都关闭
@@ -54,6 +58,7 @@
 	7.cd /home/hadoop/hadoop-2.7.3/etc/hadoop
 	8.vim slaves 将datanode的ip写入里面，进行注册，如图
 	```
+	
 	![slaves.png](https://upload-images.jianshu.io/upload_images/14467401-52c6a76194aa015f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* 9.sudo vim /etc/hosts 将以下信息填入，如图
 	![hosts.png](https://upload-images.jianshu.io/upload_images/14467401-aa8f22e995f29ac3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
