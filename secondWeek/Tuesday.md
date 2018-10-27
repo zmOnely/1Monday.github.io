@@ -158,7 +158,7 @@
 			-s ：测试该文件是否存在且为非空文件
 			```
 			* eg：查看 /root/install.log 是否具有读的权限，有的话，输出yes，没有则输出no
-			* [ -r /root/install.log ] && echo "yes" || "echo no"
+			* [ -r /root/install.log ] && echo "yes" `||` "echo no"
 				
 	* 数值比较
 		* 格式
@@ -172,7 +172,7 @@
 		-ge：大于或等于（Greater or Equal）
 		-le：小于或等于（Lesser or Equal）
 		```
-		* [ 2 -gt 1 ] && echo "yes" || echo "no"
+		* [ 2 -gt 1 ] && echo "yes" `||` echo "no"
 		
 	* 字符串比较
 		* 格式
@@ -264,6 +264,7 @@
 		```
 	* for语句结构
 		* 语法
+		
 		```
 		第一种
 		for 变量名 in 取值列表
