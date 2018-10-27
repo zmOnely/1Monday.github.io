@@ -59,7 +59,7 @@
 		* Permissive：宽容模式，代表记录安全警告但不阻止可疑行为
 		* Disable：关闭
 		* 当前有效
-		* setenforce [ Enforcing | Permissive | 1|0]
+		* setenforce [ Enforcing `|` Permissive `|` 1`|`0]
 		* 该命令可以立即改变SELinux运行状态，在Enforcing 和Permissive 之间切换,关机重启之后失效
 		* 永久有效
 		* vi  /etc/selinux/config 
