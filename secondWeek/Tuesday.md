@@ -45,7 +45,8 @@
 				* cut  <选项>   文件
 			* -d 指定分隔符
 			* -f 依据 -d 的分隔字符将一段信息分割成为数段，用 -f 取出第几段的意思
-				* echo $PATH `|` cut -d ':' -f 5 按照：来分组，找出第五组
+				* echo $PATH `|` cut -d '/' -f 5 按照'\'来分组，找出第五组
+				* ![cut.png](https://upload-images.jianshu.io/upload_images/14467401-569158005117ac2e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 			* -c 指定几个字符对应的列			
 
 	* 命令的别名
@@ -107,7 +108,8 @@
 	* 求模（取余）运算： % 
 * 算术运算
 	* eg：（2+3）x4
-	* expr `expr 2 + 3` \* 4
+	* expr $(expr 2 + 3) \* 4
+	* 空格真的很重要！！！
 * 条件测试
 	* test命令
 	* 用途
@@ -115,6 +117,7 @@
 	* 格式
 		* test 条件表达式
 		* [ 条件表达式 ]
+	* ![test.png](https://upload-images.jianshu.io/upload_images/14467401-de61326895b3e56a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)	
 	* 文件测试
 		* 格式 
 			* [  操作符  文件或目录  ]
@@ -139,6 +142,7 @@
 		[root@master ~]# echo $?
 		0
 		```
+		* ![f.png](https://upload-images.jianshu.io/upload_images/14467401-3b45c1e24a95503c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* 条件测试
 		* 文件权限测试
 			* 格式
@@ -153,10 +157,9 @@
 			-k： 测试该文件是否存在且具有sticky bit属性
 			-s ：测试该文件是否存在且为非空文件
 			```
-			```
 			* eg：查看 /root/install.log 是否具有读的权限，有的话，输出yes，没有则输出no
-			[ -r /root/install.log ] && echo "yes" || "echo no"
-			```	
+			* [ -r /root/install.log ] && echo "yes" || "echo no"
+				
 	* 数值比较
 		* 格式
 			* [  整数1  操作符  整数2  ]
@@ -166,48 +169,54 @@
 		-ne：不等于（Not Equal）
 		-gt：大于（Greater Than）
 		-lt：小于（Lesser Than）
-		-le：小于或等于（Lesser or Equal）
 		-ge：大于或等于（Greater or Equal）
+		-le：小于或等于（Lesser or Equal）
 		```
-		```
-		[ $2 -gt 1 ] && echo "too many"
-		```
+		* [ 2 -gt 1 ] && echo "yes" || echo "no"
+		
 	* 字符串比较
 		* 格式
-			* [ 字符串1  =  字符串2 ]
-			* [ 字符串1  != 字符串2 ]
-			* [ -z  字符串 ]
+			* [ 字符串1 = 字符串2 ]
+			* [ 字符串1 != 字符串2 ]
+			* [ -z 字符串 ]
 		* 常用操作符
+		
 		```
 		=：字符串内容相同
-		!=：字符串内容不同，! 号表示相反的意思
+		!=：字符串内容不同，!号表示相反的意思
 		-z：字符串内容为空
 		-n： string 判定字符串是否为非空，若string为空字符串，则为false
 		ps： -n 亦可省略 
 
 		```
+		
+		
+		* eg：
 		```
-		eg：
 		aa=abc  bb=123
-		[ $aa == $bb ] && echo "yes" || echo "no"
-		[ $aa != $bb ] && echo "yes" || echo "no"
+		[ $aa = $bb ] && echo "yes" || echo "no"  //no
+		[ $aa != $bb ] && echo "yes" || echo "no" //yes
 		name=Tammy
-		[ -z $name ] && echo "yes" || echo "no"
-		[ -n $name ] && echo "yes" || echo "no"
+		[ -z $name ] && echo "yes" || echo "no"  //no
+		[ -n $name ] && echo "yes" || echo "no"  //yes
 		```
 * 控制流程
 	* if语句结构
 		* 单分支结构
 			* 语法
-			* if  条件测试操作
-				* then   命令序列
-			* fi
+			```
+			if  条件测试操作
+				then  命令序列
+			fi
+			```
 		* 双分支结构
 			* 语法
-			* if  条件测试操作
-				* then   命令序列
-				* else   命令序列
-			* fi
+			```
+			if  条件测试操作
+				then  命令序列
+				else  命令序列
+			fi
+			```
 		* 多分支结构		
 		```
 		eg：
@@ -215,12 +224,12 @@
 		read -p "please input your name:" NAME
 		if [ $NAME = root ]
         then
-                echo "hello ${NAME},  welcome !"
+            echo "hello ${NAME}, welcome !"
         elif [ $NAME = hadoop]
-                then
-                        echo "hello ${NAME},  welcome !"
+            then
+                echo "hello ${NAME}, welcome !"
         else
-                echo "SB, get out here !"
+            echo "SB, get out here !"
 		fi
 		```
 	* case语句结构
@@ -272,6 +281,9 @@
 		执行步阶：每作一次循环时，变量的变化量。例如 i=i+1
 		```
 		
+		
+		
+		
 		```
 		eg：
 		第一种
@@ -300,6 +312,9 @@
 			命令序列
 		done
 		```
+		
+		
+		
 		
 		
 		```
