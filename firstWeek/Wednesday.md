@@ -1,4 +1,5 @@
 ## Linux
+* [相关参考ppt，需要请点击，进行下载~~](https://zmonely.github.io/zmOnely/firstWeek/Linux.ppt)
 * 虚拟机的目录结构
 * ![image.png](https://upload-images.jianshu.io/upload_images/14467401-3afb713864b364f7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 * 重启命令
