@@ -109,6 +109,7 @@
 	* 前缀 
 		* hadoop fs 命令
 	* 常用命令参数
+	啦啦啦啦啦啦啦
 	* ![4.png](https://upload-images.jianshu.io/upload_images/14467401-08a2d904e65e5a8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* ![5.png](https://upload-images.jianshu.io/upload_images/14467401-7594d5edb3699160.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* ![6.png](https://upload-images.jianshu.io/upload_images/14467401-f8ee91c647e2bee4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
