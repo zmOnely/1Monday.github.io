@@ -104,6 +104,7 @@
 		* 过程图
 		* ![8.png](https://upload-images.jianshu.io/upload_images/14467401-a8e787dff97c27ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* 元数据的目录说明
+<<<<<<< HEAD
 * DATANODE的工作机制
 	* 概述
 		* Datanode工作职责：
@@ -148,6 +149,21 @@
 	* ![7.png](https://upload-images.jianshu.io/upload_images/14467401-1a832150f3ca2b06.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* ![8.png](https://upload-images.jianshu.io/upload_images/14467401-cb88bdcc42b7b297.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* ![9.png](https://upload-images.jianshu.io/upload_images/14467401-5075dcf100f72490.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+=======
+	
+## HDFS的shell操作		
+* 前缀 
+	* hadoop fs 命令
+* 常用命令参数
+* ![4.png](https://upload-images.jianshu.io/upload_images/14467401-08a2d904e65e5a8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+* ![5.png](https://upload-images.jianshu.io/upload_images/14467401-7594d5edb3699160.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+* hadoop fs -appendToFile ~/input/append.txt /input/sources.txt
+	* ps：本地文件 远程文件  ，将本地文件追加到远程文件
+* ![6.png](https://upload-images.jianshu.io/upload_images/14467401-f8ee91c647e2bee4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+* ![7.png](https://upload-images.jianshu.io/upload_images/14467401-1a832150f3ca2b06.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+* ![8.png](https://upload-images.jianshu.io/upload_images/14467401-cb88bdcc42b7b297.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+* ![9.png](https://upload-images.jianshu.io/upload_images/14467401-5075dcf100f72490.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+>>>>>>> 4882011654d5c180f1dfb8897cac1b3fdac6298a
 
 		
 
