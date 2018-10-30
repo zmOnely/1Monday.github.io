@@ -62,18 +62,24 @@
 	* ![6.png](https://upload-images.jianshu.io/upload_images/14467401-d960d06e2c35276f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 * HDFS读数据流程
 	* 概述
+	
 	```
+	
 	客户端将要读取的文件路径发送给namenode，namenode获取文件的元信息（主要是block的存放位置信息）
 	返回给客户端，客户端根据返回的信息找到相应datanode逐个获取文件的block并在客户端本地进行数据追
 	加合并从而获得整个文件
+	
 	```
+	
 	* 详细步骤解析
+	
 	```
 	1、跟namenode通信查询元数据，找到文件块所在的datanode服务器
 	2、挑选一台datanode（就近原则，然后随机）服务器，请求建立socket流
 	3、datanode开始发送数据（从磁盘里面读取数据放入流，以packet为单位来做校验）
 	4、客户端以packet为单位接收，现在本地缓存，然后写入目标文件
 	```
+	
 	* 步骤图
 	* ![7.png](https://upload-images.jianshu.io/upload_images/14467401-ed65afb62ac5b345.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 * NAMENODE工作机制
@@ -109,6 +115,7 @@
 		* Datanode工作职责：
 			* 存储管理用户的文件块数据
 			* 定期向namenode汇报自身所持有的block信息（通过心跳信息上报，即心跳机制）
+			
 			```
 			<property>
 				<name>dfs.blockreport.intervalMsec</name>
@@ -116,6 +123,7 @@
 				<description>Determines block reporting interval in milliseconds.</description>
 			</property>
 			```
+			
 	* Datanode掉线判断时限参数
 		* datanode进程死亡或者网络故障造成datanode无法与namenode通信，namenode不会立即把该节点判定为死亡，
 		  要经过一段时间，这段时间暂称作超时时长;
