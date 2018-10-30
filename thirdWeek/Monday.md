@@ -104,19 +104,50 @@
 		* 过程图
 		* ![8.png](https://upload-images.jianshu.io/upload_images/14467401-a8e787dff97c27ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* 元数据的目录说明
-	
-## HDFS的shell操作		
+* DATANODE的工作机制
+	* 概述
+		* Datanode工作职责：
+			* 存储管理用户的文件块数据
+			* 定期向namenode汇报自身所持有的block信息（通过心跳信息上报，即心跳机制）
+			```
+			<property>
+				<name>dfs.blockreport.intervalMsec</name>
+				<value>3600000</value>
+				<description>Determines block reporting interval in milliseconds.</description>
+			</property>
+			```
+	* Datanode掉线判断时限参数
+		* datanode进程死亡或者网络故障造成datanode无法与namenode通信，namenode不会立即把该节点判定为死亡，
+		  要经过一段时间，这段时间暂称作超时时长;
+		* HDFS默认的超时时长为10分钟+30秒;
+		* 如果定义超时时间为timeout，则超时时长的计算公式为：
+		  timeout = 2 * heartbeat.recheck.interval + 10 * dfs.heartbeat.interval
+		  而默认的heartbeat.recheck.interval 大小为5分钟，dfs.heartbeat.interval默认为3秒
+		* ps：hdfs-site.xml 配置文件中的heartbeat.recheck.interval的单位为毫秒，dfs.heartbeat.interval
+		  的单位为秒，所以，假如heartbeat.recheck.interval设置为5000（毫秒），dfs.heartbeat.interval
+		  设置为3秒，（默认），则总的超时时间为40秒	
+		```
+		<property>
+			<name>heartbeat.recheck.interval</name>
+			<value>2000</value>
+		</property>
+		<property>
+			<name>dfs.heartbeat.interval</name>
+			<value>1</value>
+		</property>
+		```
+* HDFS的shell操作		
 	* 前缀 
 		* hadoop fs 命令
 	* 常用命令参数
-* ![4.png](https://upload-images.jianshu.io/upload_images/14467401-08a2d904e65e5a8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-* ![5.png](https://upload-images.jianshu.io/upload_images/14467401-7594d5edb3699160.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-* hadoop fs -appendToFile ~/input/append.txt /input/sources.txt
-	* ps：本地文件 远程文件  ，将本地文件追加到远程文件
-* ![6.png](https://upload-images.jianshu.io/upload_images/14467401-f8ee91c647e2bee4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-* ![7.png](https://upload-images.jianshu.io/upload_images/14467401-1a832150f3ca2b06.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-* ![8.png](https://upload-images.jianshu.io/upload_images/14467401-cb88bdcc42b7b297.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-* ![9.png](https://upload-images.jianshu.io/upload_images/14467401-5075dcf100f72490.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* ![4.png](https://upload-images.jianshu.io/upload_images/14467401-08a2d904e65e5a8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* ![5.png](https://upload-images.jianshu.io/upload_images/14467401-7594d5edb3699160.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* hadoop fs -appendToFile ~/input/append.txt /input/sources.txt
+		* ps：本地文件 远程文件  ，将本地文件追加到远程文件
+	* ![6.png](https://upload-images.jianshu.io/upload_images/14467401-f8ee91c647e2bee4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* ![7.png](https://upload-images.jianshu.io/upload_images/14467401-1a832150f3ca2b06.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* ![8.png](https://upload-images.jianshu.io/upload_images/14467401-cb88bdcc42b7b297.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* ![9.png](https://upload-images.jianshu.io/upload_images/14467401-5075dcf100f72490.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 		
 
