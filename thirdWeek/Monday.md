@@ -106,9 +106,9 @@
 	* 元数据的目录说明
 	
 ## HDFS的shell操作		
-	* 前缀 
-		* hadoop fs 命令
-	* 常用命令参数
+* 前缀 
+	* hadoop fs 命令
+* 常用命令参数
 * ![4.png](https://upload-images.jianshu.io/upload_images/14467401-08a2d904e65e5a8d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 * ![5.png](https://upload-images.jianshu.io/upload_images/14467401-7594d5edb3699160.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 * hadoop fs -appendToFile ~/input/append.txt /input/sources.txt
