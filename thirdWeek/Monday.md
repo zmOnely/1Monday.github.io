@@ -104,7 +104,6 @@
 		* 过程图
 		* ![8.png](https://upload-images.jianshu.io/upload_images/14467401-a8e787dff97c27ab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* 元数据的目录说明
-<<<<<<< HEAD
 * DATANODE的工作机制
 	* 概述
 		* Datanode工作职责：
