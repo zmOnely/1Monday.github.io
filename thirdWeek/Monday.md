@@ -136,16 +136,18 @@
 		* ps：hdfs-site.xml 配置文件中的heartbeat.recheck.interval的单位为毫秒，dfs.heartbeat.interval
 		  的单位为秒，所以，假如heartbeat.recheck.interval设置为5000（毫秒），dfs.heartbeat.interval
 		  设置为3秒，（默认），则总的超时时间为40秒	
-		```
-		<property>
-			<name>heartbeat.recheck.interval</name>
-			<value>2000</value>
-		</property>
-		<property>
-			<name>dfs.heartbeat.interval</name>
-			<value>1</value>
-		</property>
-		```
+	```
+		
+	<property>
+		<name>heartbeat.recheck.interval</name>
+		<value>2000</value>
+	</property>
+	<property>
+		<name>dfs.heartbeat.interval</name>
+		<value>1</value>
+	</property>
+		
+	```
 	* 观察验证DATANODE功能
 		* 上传一个文件，观察文件的block具体的物理存放情况；
 		* 在每一台datanode机器上的这个目录中能找到文件的切块：
