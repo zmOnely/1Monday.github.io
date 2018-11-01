@@ -1,30 +1,30 @@
-## HDFSµÄjava²Ù×÷
-* »ñÈ¡APIÖĞµÄ¿Í»§¶Ë¶ÔÏó
+## HDFSçš„javaæ“ä½œ
+* è·å–APIä¸­çš„å®¢æˆ·ç«¯å¯¹è±¡
 
 
-* ²Ù×÷
-	* »ù±¾Óï·¨
-		* ![hdfs'java²Ù×÷.png](https://upload-images.jianshu.io/upload_images/14467401-333b86e8903ffa0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-	* ×¼±¸¹¤×÷
+* æ“ä½œ
+	* åŸºæœ¬è¯­æ³•
+		* ![hdfs'javaæ“ä½œ.png](https://upload-images.jianshu.io/upload_images/14467401-333b86e8903ffa0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* å‡†å¤‡å·¥ä½œ
 		* ![11.png](https://upload-images.jianshu.io/upload_images/14467401-c3f744758686faa1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-	* ³£ÓÃ²Ù×÷
-		* ´´½¨ÎÄ¼ş¼Ğ
+	* å¸¸ç”¨æ“ä½œ
+		* åˆ›å»ºæ–‡ä»¶å¤¹
 		* ![mkdir.png](https://upload-images.jianshu.io/upload_images/14467401-1ea7669dea76aabb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-		* É¾³ı
+		* åˆ é™¤
 		* ![delete.png](https://upload-images.jianshu.io/upload_images/14467401-a2619ceb59bd4b93.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-		* ÉÏ´«
-			* ÆÕÍ¨ÉÏ´«
+		* ä¸Šä¼ 
+			* æ™®é€šä¸Šä¼ 
 			* ![upload.png](https://upload-images.jianshu.io/upload_images/14467401-3cec6b752905ab60.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-			* Í¨¹ıÁ÷ÉÏ´«	
+			* é€šè¿‡æµä¸Šä¼ 	
 			* ![upload1.png](https://upload-images.jianshu.io/upload_images/14467401-3e2e4d38258325ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-		* ÏÂÔØ	
-			* ÆÕÍ¨ÏÂÔØ
+		* ä¸‹è½½	
+			* æ™®é€šä¸‹è½½
 			* ![download.png](https://upload-images.jianshu.io/upload_images/14467401-25fde937b74300d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-			* Í¨¹ıÁ÷ÏÂÔØ
+			* é€šè¿‡æµä¸‹è½½
 			* ![download.png](https://upload-images.jianshu.io/upload_images/14467401-7ea885d383f5d257.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-			* ·Ö¿éÏÂÔØ
+			* åˆ†å—ä¸‹è½½
 			* ![dd.png](https://upload-images.jianshu.io/upload_images/14467401-00e4705f10469f7c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-			* ·Ö¿éÏÂÔØ¶ş
+			* åˆ†å—ä¸‹è½½äºŒ
 			* ![dd.png](https://upload-images.jianshu.io/upload_images/14467401-4b5334ea0b968ea7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-		* ²é¿´ÎÄ¼şĞÅÏ¢
+		* æŸ¥çœ‹æ–‡ä»¶ä¿¡æ¯
 			* ![look.png](https://upload-images.jianshu.io/upload_images/14467401-da7f37f565dbcf50.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
