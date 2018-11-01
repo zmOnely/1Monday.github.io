@@ -1,0 +1,30 @@
+## HDFS的java操作
+* 获取API中的客户端对象
+
+
+* 操作
+	* 基本语法
+		* ![hdfs'java操作.png](https://upload-images.jianshu.io/upload_images/14467401-333b86e8903ffa0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* 准备工作
+		* ![11.png](https://upload-images.jianshu.io/upload_images/14467401-c3f744758686faa1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* 常用操作
+		* 创建文件夹
+		* ![mkdir.png](https://upload-images.jianshu.io/upload_images/14467401-1ea7669dea76aabb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+		* 删除
+		* ![delete.png](https://upload-images.jianshu.io/upload_images/14467401-a2619ceb59bd4b93.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+		* 上传
+			* 普通上传
+			* ![upload.png](https://upload-images.jianshu.io/upload_images/14467401-3cec6b752905ab60.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+			* 通过流上传	
+			* ![upload1.png](https://upload-images.jianshu.io/upload_images/14467401-3e2e4d38258325ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+		* 下载	
+			* 普通下载
+			* ![download.png](https://upload-images.jianshu.io/upload_images/14467401-25fde937b74300d3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+			* 通过流下载
+			* ![download.png](https://upload-images.jianshu.io/upload_images/14467401-7ea885d383f5d257.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+			* 分块下载
+			* ![dd.png](https://upload-images.jianshu.io/upload_images/14467401-00e4705f10469f7c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+			* 分块下载二
+			* ![dd.png](https://upload-images.jianshu.io/upload_images/14467401-4b5334ea0b968ea7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+		* 查看文件信息
+			* ![look.png](https://upload-images.jianshu.io/upload_images/14467401-da7f37f565dbcf50.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
