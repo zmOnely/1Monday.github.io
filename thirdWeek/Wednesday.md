@@ -1,11 +1,17 @@
 ## HDFS的java操作
-* 获取API中的客户端对象
-
-
+* JavaBean
+	* 类共有
+	* 属性私有
+	* 私有属性要有对应的get，set方法
+	* 必须要有无参构造
 * 操作
 	* 基本语法
 		* ![hdfs'java操作.png](https://upload-images.jianshu.io/upload_images/14467401-333b86e8903ffa0b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* 准备工作
+		* 获取API中的客户端对象
+			* ps：在java中操作hdfs，首先要获得一个客户端实例
+			* Configuration conf = new Configuration()
+			* FileSystem fs = FileSystem.get(conf)
 		* ![11.png](https://upload-images.jianshu.io/upload_images/14467401-c3f744758686faa1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* 常用操作
 		* 创建文件夹
@@ -26,5 +32,10 @@
 			* ![dd.png](https://upload-images.jianshu.io/upload_images/14467401-00e4705f10469f7c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 			* 分块下载二
 			* ![dd.png](https://upload-images.jianshu.io/upload_images/14467401-4b5334ea0b968ea7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+			* 分块下载三
+			* ![dd.png](https://upload-images.jianshu.io/upload_images/14467401-38857f3440463164.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+			* 分块下载四
+			* ![块.png](https://upload-images.jianshu.io/upload_images/14467401-3dae632422adb52d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+			* ![所有块.png](https://upload-images.jianshu.io/upload_images/14467401-b51af1c7cd34f4dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 		* 查看文件信息
 			* ![look.png](https://upload-images.jianshu.io/upload_images/14467401-da7f37f565dbcf50.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
