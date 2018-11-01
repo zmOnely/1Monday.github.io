@@ -19,6 +19,8 @@
 	- [Wednesday(hdfs的java操作)](https://zmonely.github.io/zmOnely/thirdWeek/Wednesday)
 	- [Thursday(hadoop单点和伪分布式的配置)](https://zmonely.github.io/zmOnely/thirdWeek/Thursday)
 	- [Friday(hadoop完全分布式)](https://zmonely.github.io/zmOnely/thirdWeek/Friday)
+	- [Windows的Hadoop相关配置](https://zmonely.github.io/zmOnely/thirdWeek/Tuesday)
+	
 	
  
 
