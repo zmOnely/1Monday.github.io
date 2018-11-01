@@ -32,3 +32,4 @@
 	* start-all.cmd 启动
 * 第八步
 	* jps检查或在浏览器输入"namenode的ip+50070"检测是否成功
+	
