@@ -1,3 +1,4 @@
+## shell的使用
 ### 案例一
 * 自动安装java环境(从下包到配置)
 - [执行文件下载](https://zmonely.github.io/zmOnely/secondWeek/javaPath.sh) 

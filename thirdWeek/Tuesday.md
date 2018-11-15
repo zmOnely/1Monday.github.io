@@ -1,6 +1,6 @@
 ### 在Windows上配置Hadoop的hdfs
 * 第一步：加插件
-	* 将hadoop-eclipse-plugin-2.7.3.jar引入eclipse文件夹下的plugins下，打开eclipse，
+	* 将hadoop-eclipse-plugin-2.7.3.jar引入eclipse文件夹下的plugins下，打开eclipse
 	* 如果没有DFS Locations文件夹，将此插件继续引入dropins文件夹中重启eclipse即可
 * 第二步：
 	* ![41.png](https://upload-images.jianshu.io/upload_images/14467401-095228f57660bf6e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

@@ -18,11 +18,11 @@
 	     来规定，默认大小在hadoop2.x版本中是128M，老版本中是64M
 	（2）HDFS文件系统会给客户端提供一个统一的抽象目录树，客户端通过路径来访问文件，
 		 形如：hdfs://namenode:port/dir-a/dir-b/dir-c/file.data
-	（3）目录结构及文件分块信息(元数据)的管理由namenode节点承担，namenode是HDFS集群主
-		 节点，负责维护整个hdfs文件系统的目录树，以及每一个路径（文件）所对应的block块信息
-		 (block的id，及所在的datanode服务器)
-	（4）文件的各个block的存储管理由datanode节点承担，datanode是HDFS集群从节点，每一个block
-		 都可以在多个datanode上存储多个副本（副本数量也可以通过参数设置dfs.replication）
+	（3）目录结构及文件分块信息(元数据)的管理由namenode节点承担，namenode是HDFS集群
+	     主节点，负责维护整个hdfs文件系统的目录树，以及每一个路径（文件）所对应的
+		 block块信息(block的id，及所在的datanode服务器)
+	（4）文件的各个block的存储管理由datanode节点承担，datanode是HDFS集群从节点，每一个
+	     block都可以在多个datanode上存储多个副本（副本数量也可以通过参数设置dfs.replication）
 	（5）HDFS是设计成适应一次写入，多次读出的场景，且不支持文件的修改
 	```
 * hdfs的工作机制
@@ -41,21 +41,22 @@
 * HDFS写数据流程
 	* 概述
 	```
-	客户端要向HDFS写数据，首先要跟namenode通信以确认可以写文件并获得接收文件block
-	的datanode，然后，客户端按顺序将文件逐个block传递给相应datanode，并由接收到block
-	的datanode负责向其他datanode复制block的副本
+	客户端要向HDFS写数据，首先要跟namenode通信以确认可以写文件，并获得接收文件
+	block的datanode，然后，客户端按顺序将文件逐个block传递给相应datanode，并由
+	接收到block的datanode负责向其他datanode复制block的副本
 	```
 	* 步骤解析
 	```
-	1、根namenode通信请求上传文件，namenode检查目标文件是否已存在，父目录是否存在
+	1、根namenode通信请求上传文件，namenode检查目标文件是否已存在，
+	   父目录是否存在
 	2、namenode返回是否可以上传
 	3、client请求第一个 block该传输到哪些datanode服务器上
 	4、namenode返回3个datanode服务器ABC
-	5、client请求3台dn中的一台A上传数据（本质上是一个RPC调用，建立pipeline），A收到
-	   请求会继续调用B，然后B调用C，将真个pipeline建立完成，逐级返回客户端
-	6、client开始往A上传第一个block（先从磁盘读取数据放到一个本地内存缓存），以packet
-	   为单位，A收到一个packet就会传给B，B传给C；A每传一个packet会放入一个应答队列等待
-	   应答
+	5、client请求3台dn中的一台A上传数据（本质上是一个RPC调用，建立pipeline），
+	   A收到请求会继续调用B，然后B调用C，将真个pipeline建立完成，逐级返回客户端
+	6、client开始往A上传第一个block（先从磁盘读取数据放到一个本地内存缓存），
+	   以packet为单位，A收到一个packet就会传给B，B传给C；A每传一个packet会放入一
+	   个应答队列等待应答
 	7、当一个block传输完成之后，client再次请求namenode上传第二个block的服务器
 	```
 	* 步骤图
@@ -65,9 +66,10 @@
 	
 	```
 	
-	客户端将要读取的文件路径发送给namenode，namenode获取文件的元信息（主要是block的存放位置信息）
-	返回给客户端，客户端根据返回的信息找到相应datanode逐个获取文件的block并在客户端本地进行数据追
-	加合并从而获得整个文件
+	客户端将要读取的文件路径发送给namenode，namenode获取文件的元信息
+	（主要是block的存放位置信息）返回给客户端，客户端根据返回的信息找
+	到相应datanode逐个获取文件的block并在客户端本地进行数据追加合并从
+	而获得整个文件
 	
 	```
 	
@@ -92,11 +94,11 @@
 			* 磁盘元数据镜像文件
 			* 数据操作日志文件（可通过日志运算出元数据）	
 	* 元数据存储机制
-		* 内存中有一份完整的元数据(内存meta data)
+		* 内存中有一份完整的元数据(内存metadata)
 		* 磁盘有一个“准完整”的元数据镜像（fsimage）文件(在namenode的工作目录中)
 		* 用于衔接内存metadata和持久化元数据镜像fsimage之间的操作日志（edits文件）
-			* ps：当客户端对hdfs中的文件进行新增或者修改操作，操作记录首先被记入edits日志
-			      文件中，当客户端操作成功后，相应的元数据会更新到内存meta.data中	
+			* ps：当客户端对hdfs中的文件进行新增或者修改操作，操作记录首先被记入
+			  edits日志文件中，当客户端操作成功后，相应的元数据会更新到内存metadata中	
 	* 元数据的checkpoint
 		* 概述
 			* 每隔一段时间，会由secondary namenode将namenode上积累的所有edits和一个最新的fsimage

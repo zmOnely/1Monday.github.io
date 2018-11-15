@@ -11,7 +11,6 @@
 		* 获取API中的客户端对象
 			* ps：在java中操作hdfs，首先要获得一个客户端实例
 			* Configuration conf = new Configuration()
-			* FileSystem fs = FileSystem.get(conf)
 		* ![11.png](https://upload-images.jianshu.io/upload_images/14467401-c3f744758686faa1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* 常用操作
 		* 创建文件夹
@@ -33,7 +32,7 @@
 			* 分块下载二
 			* ![dd.png](https://upload-images.jianshu.io/upload_images/14467401-4b5334ea0b968ea7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 			* 分块下载三
-			* ![dd.png](https://upload-images.jianshu.io/upload_images/14467401-38857f3440463164.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+			* ![12.png](https://upload-images.jianshu.io/upload_images/14467401-a2c0c86cdc5dca89.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 			* 分块下载四
 			* ![块.png](https://upload-images.jianshu.io/upload_images/14467401-3dae632422adb52d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 			* ![所有块.png](https://upload-images.jianshu.io/upload_images/14467401-b51af1c7cd34f4dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
