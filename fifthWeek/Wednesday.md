@@ -1,110 +1,110 @@
-## HiveµÄjdbc½Ó¿ÚµÄÒ»Ğ©ÃüÁî
-* ½øÈëjdbc½Ó¿ÚµÄ·½·¨
+## Hiveçš„jdbcæ¥å£çš„ä¸€äº›å‘½ä»¤
+* è¿›å…¥jdbcæ¥å£çš„æ–¹æ³•
 	* beeline
 	* !connection jdbc:hive2://localhost:10000
-	* ÔÙ¸´ÖÆÒ»¸ö»á»°£¬hiveserver2£¬±£³Ö´ò¿ª×´Ì¬¼´¿É
-* ´´½¨Êı¾İ¿â
-	* create database Êı¾İ¿âÃû;
-* Õ¹Ê¾ËùÓĞÊı¾İ¿â
+	* å†å¤åˆ¶ä¸€ä¸ªä¼šè¯ï¼Œhiveserver2ï¼Œä¿æŒæ‰“å¼€çŠ¶æ€å³å¯
+* åˆ›å»ºæ•°æ®åº“
+	* create database æ•°æ®åº“å;
+* å±•ç¤ºæ‰€æœ‰æ•°æ®åº“
 	* show databases;
-* ´´½¨ÄÚ²¿±í
-	* create table ±íÃû(id int,name string) 
+* åˆ›å»ºå†…éƒ¨è¡¨
+	* create table è¡¨å(id int,name string) 
 	* row format delimited fields terminated by '\t';
-* ´´½¨Íâ²¿±í
+* åˆ›å»ºå¤–éƒ¨è¡¨
 	* create external table exzl(id int,name string)
 	* row format delimited fields terminated by '\t';
-* ´´½¨·ÖÇø±í
-	* create table ±íÃû(id int,name string) 
+* åˆ›å»ºåˆ†åŒºè¡¨
+	* create table è¡¨å(id int,name string) 
 	* partitioned by(gender string) 
 	* row format delimited fields terminated by '\t';
-	* ps£ºÏàµ±ÓÚÔÚ±íÖĞÓÖ·ÖÁËĞ¡±í£»×÷ÓÃÊÇ¿ÉÒÔ¼õÉÙÓĞÒ»¶¨Ìõ¼şÊ±µÄ²éÑ¯Êı¾İÁ¿£¬
-	  ÌáÉı²éÑ¯Ğ§ÂÊ·ÖÇø²»ÊÇÖ»ÄÜÓĞÒ»²ãµÄ£¬¿ÉÒÔ´´½¨¶à²ãµÄĞÎÊ½£¬¼´Ğ¡±íµ±ÖĞÓÖÌ×
-	  Ğ¡±í£¬Àı×ÓÈçÏÂ
+	* psï¼šç›¸å½“äºåœ¨è¡¨ä¸­åˆåˆ†äº†å°è¡¨ï¼›ä½œç”¨æ˜¯å¯ä»¥å‡å°‘æœ‰ä¸€å®šæ¡ä»¶æ—¶çš„æŸ¥è¯¢æ•°æ®é‡ï¼Œ
+	  æå‡æŸ¥è¯¢æ•ˆç‡åˆ†åŒºä¸æ˜¯åªèƒ½æœ‰ä¸€å±‚çš„ï¼Œå¯ä»¥åˆ›å»ºå¤šå±‚çš„å½¢å¼ï¼Œå³å°è¡¨å½“ä¸­åˆå¥—
+	  å°è¡¨ï¼Œä¾‹å­å¦‚ä¸‹
 	* create table zltime(id int,name string)
 	* partitioned by(year string,month string)
 	* row format delimited fields terminated by '\t';
 	* ![33.png](https://upload-images.jianshu.io/upload_images/14467401-08f1643e9678bba9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-* ¹ØÓÚ´´½¨±íµÄÒ»Ğ©
-	* ![Í¼Æ¬1.png](https://upload-images.jianshu.io/upload_images/14467401-e54e6b40e731a323.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-	* location Ö¸¶¨Êı¾İÎÄ¼ş´æ·ÅµÄhdfsÄ¿Â¼£¬¼´hdfsÉÏµÄÎÄ¼ş¼ĞÂ·¾¶£¡£¡
-		* create external table ±íÃû(id int,name string)
+* å…³äºåˆ›å»ºè¡¨çš„ä¸€äº›
+	* ![å›¾ç‰‡1.png](https://upload-images.jianshu.io/upload_images/14467401-e54e6b40e731a323.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* location æŒ‡å®šæ•°æ®æ–‡ä»¶å­˜æ”¾çš„hdfsç›®å½•ï¼Œå³hdfsä¸Šçš„æ–‡ä»¶å¤¹è·¯å¾„ï¼ï¼
+		* create external table è¡¨å(id int,name string)
 		* row format delimited fields terminated by '\t'
 		* location /dbdata/;
-	* ÄÚ²¿±íºÍÍâ²¿±íµÄÇø±ğ
+	* å†…éƒ¨è¡¨å’Œå¤–éƒ¨è¡¨çš„åŒºåˆ«
 	```
-	1.Í¨¹ıexternal¹Ø¼ü×ÖÀ´½øĞĞÇø·Ö
-	2.ÒòÎªÍâ²¿±í¸ü¶àÓÃÓÚÒıÓÃÍâ²¿µÄÊı¾İ£¬Ò²²»Ï£Íû¶ÔÔ­Ê¼Êı¾İ¼ÌĞøÆÆ»µ£¬
-	  ËùÒÔÒªÅäºÏlocationÀ´Ö¸¶¨Íâ²¿±íÒª¶ÁÈ¡Êı¾İµÄÎ»ÖÃ
-	3.É¾³ı»òÕßÇå¿ÕÄÚ²¿±í¶¼»á½«Êı¾İÕæÕıµÄÉ¾³ı£¬¶øÈç¹ûÊÇÍâ²¿±í£¬Ö»»á½«
-	  ±íµÄ¹ØÁªĞÅÏ¢É¾³ıµô£¬¶ÔÖ¸¶¨Î»ÖÃÏÂµÄÄÚÈİÃ»ÈÎºÎÓ°Ïì£¬µ±È»²»ÊÇËµÄÚ
-	  ²¿±í¾Í²»ÄÜÊ¹ÓÃlocation
+	1.é€šè¿‡externalå…³é”®å­—æ¥è¿›è¡ŒåŒºåˆ†
+	2.å› ä¸ºå¤–éƒ¨è¡¨æ›´å¤šç”¨äºå¼•ç”¨å¤–éƒ¨çš„æ•°æ®ï¼Œä¹Ÿä¸å¸Œæœ›å¯¹åŸå§‹æ•°æ®ç»§ç»­ç ´åï¼Œ
+	  æ‰€ä»¥è¦é…åˆlocationæ¥æŒ‡å®šå¤–éƒ¨è¡¨è¦è¯»å–æ•°æ®çš„ä½ç½®
+	3.åˆ é™¤æˆ–è€…æ¸…ç©ºå†…éƒ¨è¡¨éƒ½ä¼šå°†æ•°æ®çœŸæ­£çš„åˆ é™¤ï¼Œè€Œå¦‚æœæ˜¯å¤–éƒ¨è¡¨ï¼Œåªä¼šå°†
+	  è¡¨çš„å…³è”ä¿¡æ¯åˆ é™¤æ‰ï¼Œå¯¹æŒ‡å®šä½ç½®ä¸‹çš„å†…å®¹æ²¡ä»»ä½•å½±å“ï¼Œå½“ç„¶ä¸æ˜¯è¯´å†…
+	  éƒ¨è¡¨å°±ä¸èƒ½ä½¿ç”¨location
 	```
-* ²é¿´±í·ÖÇø
-	* show partitions ±íÃû;
-* ²é¿´ÏÖÓĞµÄ±í
+* æŸ¥çœ‹è¡¨åˆ†åŒº
+	* show partitions è¡¨å;
+* æŸ¥çœ‹ç°æœ‰çš„è¡¨
 	* show tables;
-* ²é¿´±í½á¹¹
-	* desc ±íÃû;
+* æŸ¥çœ‹è¡¨ç»“æ„
+	* desc è¡¨å;
 	* ![desc.png](https://upload-images.jianshu.io/upload_images/14467401-5bb24382830fe47b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-* Çå¿Õ±í
-	* truncate table ±íÃû;
-* ²éÑ¯±íÊı¾İ
-	* select * from ±íÃû;
+* æ¸…ç©ºè¡¨
+	* truncate table è¡¨å;
+* æŸ¥è¯¢è¡¨æ•°æ®
+	* select * from è¡¨å;
 	* select count(*) from man;
 	* ![33.png](https://upload-images.jianshu.io/upload_images/14467401-d09f934ce6a01aed.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-* µ¼ÈëÊı¾İ£º
-	* ´ÓhdfsÖĞµ¼ÈëÊı¾İ
-		* load data inpath 'hdfsÉÏµÄÂ·¾¶' into table ±íÃû;
-	* ´Ó±¾µØµ¼ÈëÊı¾İ
-		* load data local inpath '±¾µØÂ·¾¶' into table ±íÃû;
-	* ps£ºloadµ¼ÎÄ¼şÏàµ±ÓÚ¼ôÇĞ£¬Èç¹ûÊ¹ÓÃÁË OVERWRITE ¹Ø¼ü×Ö£¬ÔòÄ¿±ê±í£¨»òÕß·ÖÇø£©ÖĞµÄÄÚÈİ»á±»¸²¸Ç	
-* ĞŞ¸Ä±íÃû
-	* alter table ±íÃû rename to ĞÂ±íÃû;
-* Ôö¼Ó/¸Ä±ä/Ìæ»»ÁĞ
-	* alter table ±íÃû add columns (sex string);
-	* alter table ±íÃû change sex gender string;
-	* alter table ±íÃû replace columns (id string,name string);
-	* ps£ºÌæ»»£¬ÕâÁ½ÁĞ½«Ö®Ç°ËùÓĞµÄ¶¼Ìæ»»µô
-* É¾³ı±í
-	* drop table ±íÃû;
-* É¾³ı·ÖÇø
-	* alter table ±íÃû drop partition(sex='man');
-* Ôö¼Ó·ÖÇø
-	* alter table ±íÃû add partition(sex='man');
-* ²åÈëÊı¾İ
-	* ÆÕÍ¨²åÈë
-		* insert into ±íÃû values('1','zl');
-	* ½«ÆäËû±íµÄÊı¾İÌí¼Óµ½Ò»¸ö¿Õ±í
-		* insert into ±íÃû select * from man;
-	* ½«Ò»ÕÅ±íÊı¾İÖ±½Ó²åÈëĞÂ±íÖĞ
-		* create table ĞÂ±íÃû as select * from man;
-* ¾²Ì¬·ÖÇø
+* å¯¼å…¥æ•°æ®ï¼š
+	* ä»hdfsä¸­å¯¼å…¥æ•°æ®
+		* load data inpath 'hdfsä¸Šçš„è·¯å¾„' into table è¡¨å;
+	* ä»æœ¬åœ°å¯¼å…¥æ•°æ®
+		* load data local inpath 'æœ¬åœ°è·¯å¾„' into table è¡¨å;
+	* psï¼šloadå¯¼æ–‡ä»¶ç›¸å½“äºå‰ªåˆ‡ï¼Œå¦‚æœä½¿ç”¨äº† OVERWRITE å…³é”®å­—ï¼Œåˆ™ç›®æ ‡è¡¨ï¼ˆæˆ–è€…åˆ†åŒºï¼‰ä¸­çš„å†…å®¹ä¼šè¢«è¦†ç›–	
+* ä¿®æ”¹è¡¨å
+	* alter table è¡¨å rename to æ–°è¡¨å;
+* å¢åŠ /æ”¹å˜/æ›¿æ¢åˆ—
+	* alter table è¡¨å add columns (sex string);
+	* alter table è¡¨å change sex gender string;
+	* alter table è¡¨å replace columns (id string,name string);
+	* psï¼šæ›¿æ¢ï¼Œè¿™ä¸¤åˆ—å°†ä¹‹å‰æ‰€æœ‰çš„éƒ½æ›¿æ¢æ‰
+* åˆ é™¤è¡¨
+	* drop table è¡¨å;
+* åˆ é™¤åˆ†åŒº
+	* alter table è¡¨å drop partition(sex='man');
+* å¢åŠ åˆ†åŒº
+	* alter table è¡¨å add partition(sex='man');
+* æ’å…¥æ•°æ®
+	* æ™®é€šæ’å…¥
+		* insert into è¡¨å values('1','zl');
+	* å°†å…¶ä»–è¡¨çš„æ•°æ®æ·»åŠ åˆ°ä¸€ä¸ªç©ºè¡¨
+		* insert into è¡¨å select * from man;
+	* å°†ä¸€å¼ è¡¨æ•°æ®ç›´æ¥æ’å…¥æ–°è¡¨ä¸­
+		* create table æ–°è¡¨å as select * from man;
+* é™æ€åˆ†åŒº
 	* insert into zlpart partition(gender='woman')
 	* select id,name,gender from persons;
-* ¶¯Ì¬·ÖÇø
-	* Ê¹ÓÃ³¡¾°£º
-		* µ±Ïë¶ÔÊı¾İ½øĞĞ·ÖÇøµÄÊ±ºò£¬ÄãÄÜÄÃµ½µÄÊı¾İÈ´Î´±ØÊÇÒÑ¾­·ÖºÃÇøµÄÎÄ¼ş£¬
-		  ²¢²»ÄÜÖ±½Óload data¾ÍÄÜÓÃ£¬ÕâÊ±¾Í¾­³£Ê¹ÓÃ¶¯Ì¬·ÖÇø½â¾öÕâÖÖÎÊÌâ¸øÄã
-		  ÈçÏÂÎÄ¼ş£¬°ÑÊı¾İ¼ÓÈëµ½°´ÔÂ·İ·ÖÇøµÄ±íÖĞ
+* åŠ¨æ€åˆ†åŒº
+	* ä½¿ç”¨åœºæ™¯ï¼š
+		* å½“æƒ³å¯¹æ•°æ®è¿›è¡Œåˆ†åŒºçš„æ—¶å€™ï¼Œä½ èƒ½æ‹¿åˆ°çš„æ•°æ®å´æœªå¿…æ˜¯å·²ç»åˆ†å¥½åŒºçš„æ–‡ä»¶ï¼Œ
+		  å¹¶ä¸èƒ½ç›´æ¥load dataå°±èƒ½ç”¨ï¼Œè¿™æ—¶å°±ç»å¸¸ä½¿ç”¨åŠ¨æ€åˆ†åŒºè§£å†³è¿™ç§é—®é¢˜ç»™ä½ 
+		  å¦‚ä¸‹æ–‡ä»¶ï¼ŒæŠŠæ•°æ®åŠ å…¥åˆ°æŒ‰æœˆä»½åˆ†åŒºçš„è¡¨ä¸­
 		  
-		* ![ÈçÏÂÎÄ¼ş.png](https://upload-images.jianshu.io/upload_images/14467401-aee73aaf0ffb31e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+		* ![å¦‚ä¸‹æ–‡ä»¶.png](https://upload-images.jianshu.io/upload_images/14467401-aee73aaf0ffb31e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
  
-	* ÊµÏÖ£º
+	* å®ç°ï¼š
 		```
-		1.½«»ìÂÒµÄÊı¾İ´«ÈëÒ»¸ö±íÖĞ£»
-		2.´´½¨¶ÔÓ¦µÄ·ÖÇø±í
+		1.å°†æ··ä¹±çš„æ•°æ®ä¼ å…¥ä¸€ä¸ªè¡¨ä¸­ï¼›
+		2.åˆ›å»ºå¯¹åº”çš„åˆ†åŒºè¡¨
 		  create table zlpart(id int,name string) 
 		  partitioned by (gender string)
 		  row format delimited fields terminated by '\t';
-		3.Ïò·ÖÇø±í¶¯Ì¬²åÈëÊı¾İ
+		3.å‘åˆ†åŒºè¡¨åŠ¨æ€æ’å…¥æ•°æ®
 		  insert into zlpart partition(gender)
 		  select id,name,gender from persons;
-		3.1Èç¹ûÒª½øĞĞ¶¯Ì¬·ÖÇø£¬¾Í²»ÒªÔÙpartition(month)ÖĞ¸ø·ÖÇøÉèÖÃ¹Ì¶¨Öµ£¬
-		   ²»È»¾Í²»ÊÇ¶¯Ì¬·ÖÇøÁË
-		3.2Ä¬ÈÏÊ¹ÓÃµÄÊÇÑÏ¸ñÄ£Ê½£¬²»ÔÊĞí¶¯Ì¬·ÖÇø£¬ĞèÒªÔÚÃüÁîĞĞÖ´ĞĞ
+		3.1å¦‚æœè¦è¿›è¡ŒåŠ¨æ€åˆ†åŒºï¼Œå°±ä¸è¦å†partition(month)ä¸­ç»™åˆ†åŒºè®¾ç½®å›ºå®šå€¼ï¼Œ
+		   ä¸ç„¶å°±ä¸æ˜¯åŠ¨æ€åˆ†åŒºäº†
+		3.2é»˜è®¤ä½¿ç”¨çš„æ˜¯ä¸¥æ ¼æ¨¡å¼ï¼Œä¸å…è®¸åŠ¨æ€åˆ†åŒºï¼Œéœ€è¦åœ¨å‘½ä»¤è¡Œæ‰§è¡Œ
 		   set hive.exec.dynamic.partition.mode=nonstrict
-		3.3Ê¹ÓÃ¶¯Ì¬·ÖÇø»á½«²éÑ¯½á¹û¼¯µÄ×îºóÒ»¸ö×÷Îª·ÖÇøÌõ¼ş£¬ËùÒÔselect²éÑ¯Òª×¢Òâ
+		3.3ä½¿ç”¨åŠ¨æ€åˆ†åŒºä¼šå°†æŸ¥è¯¢ç»“æœé›†çš„æœ€åä¸€ä¸ªä½œä¸ºåˆ†åŒºæ¡ä»¶ï¼Œæ‰€ä»¥selectæŸ¥è¯¢è¦æ³¨æ„
 		```
  		
 		
