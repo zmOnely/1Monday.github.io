@@ -119,7 +119,8 @@
 		* ![full.png](https://upload-images.jianshu.io/upload_images/14467401-eba12300508af43e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* 左半连接
 		* select o.*,g.* from zorder o left semi join goods g on o.gid = g.gid;
-		* ![left.png](https://upload-images.jianshu.io/upload_images/14467401-6b4c6df18e789d3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+		* ![left.png](https://upload-images.jianshu.io/upload_images/14467401-1e7a3073e9d4b5f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 * in关键字
 	* select * from zorder where o.gid in (select g.gid from goods g);
 	* ![in.png](https://upload-images.jianshu.io/upload_images/14467401-45cc51776f004b5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
