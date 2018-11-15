@@ -1,4 +1,4 @@
-## Hive的jdbc接口的一些使用
+## Hive的jdbc接口的一些命令
 * 进入jdbc接口的方法
 	* beeline
 	* !connection jdbc:hive2://localhost:10000
@@ -79,6 +79,9 @@
 		* insert into 表名 select * from man;
 	* 将一张表数据直接插入新表中
 		* create table 新表名 as select * from man;
+* 静态分区
+	* insert into zlpart partition(gender='woman')
+	* select id,name,gender from persons;
 * 动态分区
 	* 使用场景：
 		* 当想对数据进行分区的时候，你能拿到的数据却未必是已经分好区的文件，

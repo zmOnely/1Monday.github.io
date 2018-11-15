@@ -27,6 +27,8 @@
 	- [Thursday(MapReduce)](https://zmonely.github.io/zmOnely/fourthWeek/Thursday)
 	- [Friday(MapReduce)](https://zmonely.github.io/zmOnely/fourthWeek/Friday)
 	- [小结](https://zmonely.github.io/zmOnely/fourthWeek/Sum)
+- [Friends](https://lixiaoxiaolove.github.io/Lixiaoxiao/)
+	
 		
 	
 	
