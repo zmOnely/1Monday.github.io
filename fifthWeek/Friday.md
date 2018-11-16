@@ -2,7 +2,6 @@
 * 字符串转换
 	* select cast('2017-08-15' as date);
 	
-
 * 向上取整
 	* select ceil(5.1);
 
