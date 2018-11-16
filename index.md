@@ -34,8 +34,7 @@
 	- [Thursday(Hive的jdbc接口命令)](https://zmonely.github.io/zmOnely/fifthWeek/Thursday)
 	- [Friday(MapReduce)](https://zmonely.github.io/zmOnely/fifthWeek/Friday)
 	- [小结](https://zmonely.github.io/zmOnely/fifthWeek/Sum)	
-- [Friends](https://lixiaoxiaolove.github.io/Lixiaoxiao/)
-	
+
 		
 	
 	
