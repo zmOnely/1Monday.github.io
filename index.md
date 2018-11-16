@@ -32,7 +32,7 @@
 	- [Tuesday(Hive基础)](https://zmonely.github.io/zmOnely/fifthWeek/Monday)
 	- [Wednesday(Hive的jdbc接口命令)](https://zmonely.github.io/zmOnely/fifthWeek/Wednesday)
 	- [Thursday(Hive的jdbc接口命令)](https://zmonely.github.io/zmOnely/fifthWeek/Thursday)
-	- [Friday(MapReduce)](https://zmonely.github.io/zmOnely/fifthWeek/Friday)
+	- [Friday(Hive函数)](https://zmonely.github.io/zmOnely/fifthWeek/Friday)
 	
 
 		
