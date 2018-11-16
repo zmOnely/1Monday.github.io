@@ -27,6 +27,13 @@
 	- [Thursday(MapReduce)](https://zmonely.github.io/zmOnely/fourthWeek/Thursday)
 	- [Friday(MapReduce)](https://zmonely.github.io/zmOnely/fourthWeek/Friday)
 	- [小结](https://zmonely.github.io/zmOnely/fourthWeek/Sum)
+- FifthWeek
+	- [Monday(InputFormat、OutputFormat、hive搭建)](https://zmonely.github.io/zmOnely/fifthWeek/Monday)
+	- [Tuesday(Hive基础)](https://zmonely.github.io/zmOnely/fifthWeek/Monday)
+	- [Wednesday(Hive的jdbc接口命令)](https://zmonely.github.io/zmOnely/fifthWeek/Wednesday)
+	- [Thursday(Hive的jdbc接口命令)](https://zmonely.github.io/zmOnely/fifthWeek/Thursday)
+	- [Friday(MapReduce)](https://zmonely.github.io/zmOnely/fifthWeek/Friday)
+	- [小结](https://zmonely.github.io/zmOnely/fifthWeek/Sum)	
 - [Friends](https://lixiaoxiaolove.github.io/Lixiaoxiao/)
 	
 		

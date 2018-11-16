@@ -43,6 +43,8 @@
 	* 5.将普通表中数据加入分桶表，进行分桶
 		* insert into orderbucket
 		* select * from zorder;
+	* ![bucket.png](https://upload-images.jianshu.io/upload_images/14467401-7577be02284342b0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	
 	* ps：最大的作用是用来提高 join 操作的效率	
 * 分组
 	* 1.创建一个普通的表
@@ -57,7 +59,8 @@
 		* select dep,avg(money)
 		* from company_emp
 		* group by dep;
-		* ![cc.png](https://upload-images.jianshu.io/upload_images/14467401-3c3fd3cacdc6f92a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+		* ![group.png](https://upload-images.jianshu.io/upload_images/14467401-cc81748738c17113.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 	* ps：
 	```
 	1.使用分组就不再是逐行执行模式了，会根据分组的key以分组
@@ -139,6 +142,7 @@
 		* collection items terminated by '#'
 		* map keys terminated by ':';
 		* ![23.png](https://upload-images.jianshu.io/upload_images/14467401-d7184cc724e123fe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+		* 通过key获取value
 		* select name,family['father'] from maps;
 		* ![1.png](https://upload-images.jianshu.io/upload_images/14467401-a6a545dae4c3468a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
