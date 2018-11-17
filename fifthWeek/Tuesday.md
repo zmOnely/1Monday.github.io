@@ -54,11 +54,7 @@
 		5.bucket：在hdfs中表现为同一个表目录下根据hash散列之
 		  后的多个文件 桶
 	```
-* inoutput的示例
-* 读取两个文件，使用自定义inputformat一次性读取出来，然后在map中进行解析，最终将合法
-  的记录以<文件，记录>的形式输出到success.log中，不合法的记录以<文件，记录>的形式输出
-  到error.log中,不执行reduce
-* 代码请参考car工程  
+	
 	
 	
 	
