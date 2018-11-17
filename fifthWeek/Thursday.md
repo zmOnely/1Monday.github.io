@@ -63,11 +63,11 @@
 
 	* ps：
 	```
-	1.使用分组就不再是逐行执行模式了，会根据分组的key以分组
-	  模式执行，所以数据都是一组一组的，没法调用除了分组key
-	  和聚合函数（属性）之外的单独属性
-	2.使用聚合函数得到的结果默认的字段名不好使，要进行调用可
-	  以取个别名，就可以在条件中使用了
+	1.使用分组就不再是逐行执行模式了，会根据分组的key以分组模式执行，
+	  所以数据都是一组一组的，没法调用除了分组key和聚合函数（属性）之
+	  外的单独属性
+	2.使用聚合函数得到的结果默认的字段名不好使，要进行调用可以取个别
+	  名，就可以在条件中使用了
 	```
 * hiving
 	* 对分组中的数据进行条件筛选
@@ -103,7 +103,7 @@
 		* ![by.png](https://upload-images.jianshu.io/upload_images/14467401-6325681c4f2f1ebe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* Cluster by
 		* 除了具有distribute by的功能外，还会对该字段进行排序，如果
-		  分桶和sort字段是同一个时，此时clustered by = distribute by + sort by，
+		  分桶和sort字段是同一个时，此时clustered by = distribute by + sort by；
 		  如果要分桶的字段和要排序的字段不一样，就不能使用clustered by
 		* select * from goods Cluster by gid;
 		* ![cluster.png](https://upload-images.jianshu.io/upload_images/14467401-0ede4412037ba155.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -113,26 +113,27 @@
 
 	* ![order.png](https://upload-images.jianshu.io/upload_images/14467401-cca5580e9631074a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* 内连接
-		* select o.*,g.* from zorder o join goods g on o.gid = g.gid;
-		* select o.*,g.* from zorder o inner join goods g on o.gid = g.gid;
+		* select o.`*`,g.`*` from zorder o join goods g on o.gid = g.gid;
+		* select o.`*`,g.`*` from zorder o inner join goods g on o.gid = g.gid;
 		* ![1.png](https://upload-images.jianshu.io/upload_images/14467401-ed98e9b22a6f8f63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 	* 全连接
-		* select o.*,g.* from zorder o full join goods g on o.gid = g.gid;
+		* select o.`*`,g.`*` from zorder o full join goods g on o.gid = g.gid;
 		* ![full.png](https://upload-images.jianshu.io/upload_images/14467401-eba12300508af43e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* 左半连接
-		* select o.*,g.* from zorder o left semi join goods g on o.gid = g.gid;
+		* select o.`*` from zorder o left semi join goods g on o.gid = g.gid;
+		* 左半连接只能获取左边表的数据，不能获取右边！！
 		* ![left.png](https://upload-images.jianshu.io/upload_images/14467401-1e7a3073e9d4b5f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
+		
 * in关键字
-	* select * from zorder where o.gid in (select g.gid from goods g);
+	* select * from zorder where gid in (select gid from goods);
 	* ![in.png](https://upload-images.jianshu.io/upload_images/14467401-45cc51776f004b5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 * 数据类型
 	* 源表
 	* ![2.png](https://upload-images.jianshu.io/upload_images/14467401-5eaf6a2159dbe258.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 	* 数组，日期
-		* create table movies(name string,actors array<string>,time date)
+		* create table movies(name string,actors array`<string>`,time date)
 		* row format delimited fields terminated by ','
 		* collection items terminated by ':';
 		* ![map.png](https://upload-images.jianshu.io/upload_images/14467401-32eced0e7365be24.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

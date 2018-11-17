@@ -7,38 +7,39 @@
 	* create database 数据库名;
 * 展示所有数据库
 	* show databases;
+* ![图片1.png](https://upload-images.jianshu.io/upload_images/14467401-e54e6b40e731a323.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+* 注意：hive是不会检查用户导入表中的数据的！如果数据的格式跟表定义的格式
+  不一致，hive也不会做任何处理（能解析就解析，解析不了就是null）；
 * 创建内部表
 	* create table 表名(id int,name string) 
 	* row format delimited fields terminated by '\t';
+	
 * 创建外部表
 	* create external table exzl(id int,name string)
 	* row format delimited fields terminated by '\t';
+	* location '文件夹路径！！';
+	* 内部表和外部表的区别
+		```
+		1.通过external关键字来进行区分	
+		2.删除或者清空内部表是清除相关元数据，并删除表数据目录，而如果是外部表，只会将
+		  表的关联信息删除掉，对指定位置下的内容没任何影响，即只会清除相关元数据
+		3.表目录位于hive的仓库目录/user/hive/warehouse；
+		  表目录由建表用户自己指定，通常在location中规定
+		```		
+	
 * 创建分区表
-	* create table 表名(id int,name string) 
-	* partitioned by(gender string) 
-	* row format delimited fields terminated by '\t';
-	* ps：相当于在表中又分了小表；作用是可以减少有一定条件时的查询数据量，
-	  提升查询效率分区不是只能有一层的，可以创建多层的形式，即小表当中又套
-	  小表，例子如下
-	* create table zltime(id int,name string)
+	* create table 表名(id int,name string)
 	* partitioned by(year string,month string)
 	* row format delimited fields terminated by '\t';
 	* ![33.png](https://upload-images.jianshu.io/upload_images/14467401-08f1643e9678bba9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-* 关于创建表的一些
-	* ![图片1.png](https://upload-images.jianshu.io/upload_images/14467401-e54e6b40e731a323.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-	* location 指定数据文件存放的hdfs目录，即hdfs上的文件夹路径！！
-		* create external table 表名(id int,name string)
-		* row format delimited fields terminated by '\t'
-		* location /dbdata/;
-	* 内部表和外部表的区别
-	```
-	1.通过external关键字来进行区分
-	2.因为外部表更多用于引用外部的数据，也不希望对原始数据继续破坏，
-	  所以要配合location来指定外部表要读取数据的位置
-	3.删除或者清空内部表都会将数据真正的删除，而如果是外部表，只会将
-	  表的关联信息删除掉，对指定位置下的内容没任何影响，当然不是说内
-	  部表就不能使用location
-	```
+	* 分区表的实质是：在表目录中为数据文件创建分区子目录，以便于在查询时，
+	  MR程序可以针对指定的分区子目录中的数据进行处理，缩减读取数据的范围，
+	  提高效率
+	* ps：可以根据一个及以上来分区，创建一个分区表时--partitioned；
+		  查看表分区时--partitions；
+		  创建动态分区表时--partition
+		  
+	
 * 查看表分区
 	* show partitions 表名;
 * 查看现有的表
@@ -68,6 +69,8 @@
 	* ps：替换，这两列将之前所有的都替换掉
 * 删除表
 	* drop table 表名;
+	* ps：hive会从元数据库中清除关于这个表的信息；
+	      从hdfs中删除这个表的表目录；
 * 删除分区
 	* alter table 表名 drop partition(sex='man');
 * 增加分区
@@ -79,10 +82,6 @@
 		* insert into 表名 select * from man;
 	* 将一张表数据直接插入新表中
 		* create table 新表名 as select * from man;
-	* 将其他表的数据添加到一个空表
-		* insert into zuser select * from man1;
-	* 将一张表数据直接插入到新表中
-		* create table resultwomen as select name from women;
 	
 * 静态分区
 	* insert into zlpart partition(gender='woman')

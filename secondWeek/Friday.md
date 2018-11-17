@@ -67,6 +67,7 @@
 	```
 	在namenode中操作
 	1.ssh-keygen  生成密钥
+	ps：不输入任何信息，直接回车就好
 	2.ssh-copy-id 需要免密的用户名@需要免密的ip
 	  eg：
 	  ssh-copy-id hadoop@172.18.24.198
