@@ -29,7 +29,7 @@
 	- [小结](https://zmonely.github.io/zmOnely/fourthWeek/Sum)
 - FifthWeek
 	- [Monday(InputFormat、OutputFormat、hive搭建)](https://zmonely.github.io/zmOnely/fifthWeek/Monday)
-	- [Tuesday(Hive基础)](https://zmonely.github.io/zmOnely/fifthWeek/Monday)
+	- [Tuesday(Hive基础)](https://zmonely.github.io/zmOnely/fifthWeek/Tuesday)
 	- [Wednesday(Hive的jdbc接口命令)](https://zmonely.github.io/zmOnely/fifthWeek/Wednesday)
 	- [Thursday(Hive的jdbc接口命令)](https://zmonely.github.io/zmOnely/fifthWeek/Thursday)
 	- [Friday(Hive函数)](https://zmonely.github.io/zmOnely/fifthWeek/Friday)
