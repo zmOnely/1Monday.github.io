@@ -111,14 +111,6 @@
 	where rank <= 2;
 	```
 	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-73199c5f863006bf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
-	
-	
-	
-	
-	
-	
-	
 	
 * 需求：将源表的数据改为最终表的形式
 * ![表.png](https://upload-images.jianshu.io/upload_images/14467401-4be40d510da2bb6f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
