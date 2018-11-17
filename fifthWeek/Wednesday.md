@@ -1,4 +1,4 @@
-## Hive的jdbc接口的一些命令
+## Hive的jdbc接口命令
 * 进入jdbc接口的方法
 	* beeline
 	* !connection jdbc:hive2://localhost:10000

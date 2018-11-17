@@ -1,4 +1,4 @@
-## Hive的jdbc接口的一些命令
+## Hive的jdbc接口命令
 * 动态分区--两个分区的使用
 
 	* 1.创建一个普通的表
@@ -145,7 +145,18 @@
 		* 通过key获取value
 		* select name,family['father'] from maps;
 		* ![1.png](https://upload-images.jianshu.io/upload_images/14467401-a6a545dae4c3468a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+* 结构体
+	* 创建表
+		* create table structs(id int,name string,info struct<age:int,gender:string,addr:string>)
+		* row format delimited fields terminated by ','
+		* collection items terminated by ':';
+	* 导入数据
+		* load data inpath '/dbdata/structs.log' into table structs;
+		* ![12.png](https://upload-images.jianshu.io/upload_images/14467401-0aae9177d44976dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+	* 查看数据
+		* select id,name,info.age from structs;
+		* ps：可以通过info.##来查询数据
 
 
 
