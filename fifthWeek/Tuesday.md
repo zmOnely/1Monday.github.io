@@ -1,4 +1,6 @@
 ## Hive基础
+* [参考文档，需要请下载~~](https://zmonely.github.io/zmOnely/fifthWeek/hive.docx)
+* [参考ppt，需要请下载~~](https://zmonely.github.io/zmOnely/fifthWeek/Hive03.ppt)
 * 定义
 	* Hive是基于Hadoop的一个数据仓库工具，可以将结构化的数据文件映射为一张数据库表，
 	并提供类SQL查询功能，Hive底层是将SQL语句转换为MapReduce任务运行
