@@ -79,6 +79,11 @@
 		* insert into 表名 select * from man;
 	* 将一张表数据直接插入新表中
 		* create table 新表名 as select * from man;
+	* 将其他表的数据添加到一个空表
+		* insert into zuser select * from man1;
+	* 将一张表数据直接插入到新表中
+		* create table resultwomen as select name from women;
+	
 * 静态分区
 	* insert into zlpart partition(gender='woman')
 	* select id,name,gender from persons;
