@@ -14,10 +14,11 @@
 	* select substr('2015-09-05',4);
 	* select substring('2015-09-05',4);
 		* ![12.png](https://upload-images.jianshu.io/upload_images/14467401-f52e7010faf48859.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+		* ps：4代表从第四个字符开始取，从1开始
 	* select substring('2015-09-05',6,9);
 	* select substr('2015-09-05',1,7);
-		* ps：4代表从第四个字符开始取，从1开始
-	* select split('172.18.24.198','\\.');
+		
+	* select split('172.18.24.198','`\\`.');
 		* ![12.png](https://upload-images.jianshu.io/upload_images/14467401-9ae1e4c2ad3b1038.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 * 拼接
