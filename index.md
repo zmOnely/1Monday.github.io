@@ -22,7 +22,7 @@
 	- [Windows的Hadoop相关配置](https://zmonely.github.io/zmOnely/thirdWeek/Tuesday)
 - FourthWeek
 	- [Monday(MapReduce)](https://zmonely.github.io/zmOnely/fourthWeek/Monday)
-	- [Tuesday(MapReduce)](https://zmonely.github.io/zmOnely/fourthWeek/Monday)
+	- [Tuesday(MapReduce)](https://zmonely.github.io/zmOnely/fourthWeek/Tuesday)
 	- [Wednesday(MapReduce)](https://zmonely.github.io/zmOnely/fourthWeek/Wednesday)
 	- [Thursday(MapReduce)](https://zmonely.github.io/zmOnely/fourthWeek/Thursday)
 	- [Friday(MapReduce)](https://zmonely.github.io/zmOnely/fourthWeek/Friday)
