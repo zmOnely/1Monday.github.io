@@ -17,8 +17,7 @@
 			* ps：比如平均数的例子，我们输入的文件是avg.txt，avg1.txt，combiner的作用是把每个
 			* 文件里面的数算平均，最后把这个平均数传给reduce，而reduce作用是将combiner传来的
 			* 每个文件的平均数最后再算平均数输出
-		* 4. combiner能够应用的前提是不能影响最终的业务逻辑，输出kv应该跟reducer的输入kv类型要
-		* 对应起来
+		* `4`. combiner能够应用的前提是不能影响最终的业务逻辑，输出kv应该跟reducer的输入kv类型要对应起来
 	* ![Combiner原理.png](https://upload-images.jianshu.io/upload_images/14467401-057ed3bdf5f64e44.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 * mr原理
 * ![mapreduce原理.png](https://upload-images.jianshu.io/upload_images/14467401-acebf77302455a22.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
@@ -66,9 +65,8 @@
 	job.setNumReduceTasks(4);
 	如果数据分布不均匀，就有可能在reduce阶段产生数据倾斜
 	注意： 
-	reducetask数量并不是任意设置，尽量不要运行太多的reduce task
-	对大多数job来说，最好reduce的个数最多和集群中的reduce持平，
-	或者比集群的 reduce slots小；这个对于小集群而言，尤其重要
+	reducetask数量并不是任意设置，尽量不要运行太多的reducetask;对大多数job来说，最好reduce的
+	个数最多和集群中的reduce持平，或者比集群的 reduce slots小；这个对于小集群而言，尤其重要
 	```
 	* mr程序运行模式
 		* 本地运行模式
@@ -83,14 +81,19 @@
 		    请参考第三周笔记
 		```
 		* 集群运行模式
-		```
-		（1）将mapreduce程序提交给yarn集群resourcemanager，分发到很多的节点上并发执行
-		（2）处理的数据和输出结果应该位于hdfs文件系统
-		（3）提交集群的实现步骤：
-		将程序打成JAR包，然后在集群的任意一个节点上用hadoop命令启动
-		hadoop jar wordcount.jar cn.itcast.bigdata.mrsimple.WordCountDriver inputpath outputpath
+
+		* （1）将mapreduce程序提交给yarn集群resourcemanager，分发到很多的节点上并发执行
+		* （2）处理的数据和输出结果应该位于hdfs文件系统
+		* （3）提交集群的实现步骤：
+			* 1.将程序打成jar包，传入/home/hadoop下；
+			* 2.将要处理的数据文件上传到hdfs的任意路径下；
+			* 3.hadoop jar jar包名字 文件输入路径 要输出结果的空文件夹路径
+			* ps：配置好/hadoop2.7.3/etc/hadoop/yarn-site.xml，保证每个namenode，datanode下
+			都有，保证各个名字对应(设置临时名：hostname 名字 设置永久名：/etc/hostname下)
+			
 		
 		在yarn-site.xml的配置：
+		```
 		<property>
 			<name>yarn.resourcemanager.address</name>
 			<value>namenodes:8032</value>
