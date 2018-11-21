@@ -65,9 +65,7 @@
 	* 2.tar -zxf ... 解压
 	
 	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-7497179e6d19e21e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)	
-	
-	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-32444995a9c99844.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240) 
-	
+		
 	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-93f6275a551d2f72.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	
 	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-f6e0cde6b912094a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
