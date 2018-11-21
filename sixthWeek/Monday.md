@@ -63,13 +63,9 @@
 
 	* 1.将apache-flume-1.6.0-bin.tar.gz压缩包传到/home/hadoop
 	* 2.tar -zxf ... 解压
-	* 3.
+	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-7497179e6d19e21e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)	
 	
-	![image.png](https://upload-images.jianshu.io/upload_images/14467401-7497179e6d19e21e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)	
-	
-	* 4.
-	
-	![image.png](https://upload-images.jianshu.io/upload_images/14467401-93f6275a551d2f72.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-93f6275a551d2f72.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	
 	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-f6e0cde6b912094a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
@@ -79,7 +75,7 @@
 	* 3.vim netcat.conf
 	* 4.解压flume-conf，例子在里面，将其拷贝进netcat.conf
 	* 5.复制会话，cd flume 注意路径问题！！
-	* 6.
+	* `6.`
 		```
 		bin/flume-ng agent --conf conf --conf-file myconf/netcat.conf 
 		--name a2 -Dflume.root.logger=INFO,console
