@@ -64,10 +64,15 @@
 	* 1.将apache-flume-1.6.0-bin.tar.gz压缩包传到/home/hadoop
 	* 2.tar -zxf ... 解压
 	* 3.
+	
 	![image.png](https://upload-images.jianshu.io/upload_images/14467401-7497179e6d19e21e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)	
+	
 	* 4.
+	
 	![image.png](https://upload-images.jianshu.io/upload_images/14467401-93f6275a551d2f72.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	
 	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-f6e0cde6b912094a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 * 使用--netcat
 	* 1.在flume目录下 mkdir myconf
 	* 2.cd myconf/
