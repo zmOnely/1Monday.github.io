@@ -1,4 +1,4 @@
-* 窗口分区函数row_number() over()
+#### 窗口分析函数row_number() over()
 	* 需求：将连续三天及以上有销售额的店铺进行展示
 	```
 	1.根据店铺进行分区,根据时间进行升序排序,生成行号
@@ -32,7 +32,7 @@
 	  as row_num from shop) as first) as res
 	  group by name,diff having res_count >= 3
 	```
-* 创建自定义函数UDF(user definid function)步骤
+#### 创建自定义函数UDF(user definid function)步骤
 	```
 	1.需求分析
 	2.写Java类继承UDF,实现evaluate方法
@@ -59,7 +59,7 @@
 
 
 
-* 安装使用flume
+#### 安装使用flume
 	* 1.将apache-flume-1.6.0-bin.tar.gz压缩包传到/home/hadoop
 	* 2.tar -zxf ... 解压
 	* 3.![image.png](https://upload-images.jianshu.io/upload_images/14467401-7497179e6d19e21e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)	
