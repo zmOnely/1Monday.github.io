@@ -39,7 +39,6 @@
 	      供使用，举例来说，当你注册一个用户时，输入用户名，会提示你用户名是否存在，这就是
 		  异步的效果，无需等待，ajax会帮你后台查询并返回结果
 	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-aeeba91b8d9e7b21.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-a2fb04d3bec32af5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* 完成注册功能
 		* ajax.html
 			
@@ -54,13 +53,29 @@
 			* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-e0906622563a7175.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 			* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-2fe9d576b40ec9e9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 			* ps：以上在script脚本中
-			* 页面效果
+			* 页面实现
 			* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-e7a52ec3e1ea61e3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 		* RegServlet.java
 			* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-3d69d20991b2e9c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 		* UserssDao.java
 			* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-90ba0c7d7648ed5b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+* ssm
+* 实现查询数据库中所有的数据
+	* 1.逆向工程(帮助创建工程固定包和类)
+		* generatorConfig.xml
+		* ps：进入文件中，将数据库连接和一些包和类名改为自己所需即可
+		* 运行
+		* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-322a62912ebaa5f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* 2.创建一个util包，里面创建一个MyMapper类
+		* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-b7eb288f46ae361f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* 3.application.yml
+		* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-1c0a209a3e1ebf22.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* 4.在Controller包中创建UserController类
+		* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-31a99f30e87329af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+	* 效果
+		* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-faed72c840049429.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 
