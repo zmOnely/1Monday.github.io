@@ -14,15 +14,17 @@
 	* 它是分布式的，由很多服务器联合起来实现其功能，集群中的服务器有各自的角色
 * 特性
 	```
-	（1）HDFS中的文件在物理上是分块存储(block)，块的大小可以通过配置参数(dfs.blocksize)
+	（1）HDFS中的文件在物理上是分块存储(block)，块的大小可以通过配置
+	     参数(dfs.blocksize)
 	     来规定，默认大小在hadoop2.x版本中是128M，老版本中是64M
 	（2）HDFS文件系统会给客户端提供一个统一的抽象目录树，客户端通过路径来访问文件，
 		 形如：hdfs://namenode:port/dir-a/dir-b/dir-c/file.data
 	（3）目录结构及文件分块信息(元数据)的管理由namenode节点承担，namenode是HDFS集群
 	     主节点，负责维护整个hdfs文件系统的目录树，以及每一个路径（文件）所对应的
 		 block块信息(block的id，及所在的datanode服务器)
-	（4）文件的各个block的存储管理由datanode节点承担，datanode是HDFS集群从节点，每一个
-	     block都可以在多个datanode上存储多个副本（副本数量也可以通过参数设置dfs.replication）
+	（4）文件的各个block的存储管理由datanode节点承担，datanode是HDFS集群从节点，
+	     每一个block都可以在多个datanode上存储多个副本（副本数量也可以通过参数
+		 设置dfs.replication）
 	（5）HDFS是设计成适应一次写入，多次读出的场景，且不支持文件的修改
 	```
 * hdfs的工作机制
@@ -47,7 +49,7 @@
 	```
 	* 步骤解析
 	```
-	1、根namenode通信请求上传文件，namenode检查目标文件是否已存在，
+	1、向namenode通信请求上传文件，namenode检查目标文件是否已存在，
 	   父目录是否存在
 	2、namenode返回是否可以上传
 	3、client请求第一个 block该传输到哪些datanode服务器上
@@ -66,10 +68,10 @@
 	
 	```
 	
-	客户端将要读取的文件路径发送给namenode，namenode获取文件的元信息
-	（主要是block的存放位置信息）返回给客户端，客户端根据返回的信息找
-	到相应datanode逐个获取文件的block并在客户端本地进行数据追加合并从
-	而获得整个文件
+	客户端将要读取的文件路径发送给namenode，namenode获取文件的元信息，
+	（主要是block的存放位置信息），返回给客户端，客户端根据返回的信息找
+	到相应datanode，逐个获取文件的block，并在客户端本地进行数据追加合并，
+	从而获得整个文件
 	
 	```
 	
@@ -79,7 +81,7 @@
 	1、跟namenode通信查询元数据，找到文件块所在的datanode服务器
 	2、挑选一台datanode（就近原则，然后随机）服务器，请求建立socket流
 	3、datanode开始发送数据（从磁盘里面读取数据放入流，以packet为单位来做校验）
-	4、客户端以packet为单位接收，现在本地缓存，然后写入目标文件
+	4、客户端以packet为单位接收，先在本地缓存，然后写入目标文件
 	```
 	
 	* 步骤图

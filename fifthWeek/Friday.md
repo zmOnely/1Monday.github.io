@@ -37,6 +37,9 @@
 	* ![12.png](https://upload-images.jianshu.io/upload_images/14467401-86eb5562c978f56a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	* select from_unixtime(unix_timestamp());
 	* ![12.png](https://upload-images.jianshu.io/upload_images/14467401-edc934a518f2fcee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-6138bf92133d0df0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-7b4bfcfaa1e1e736.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 * if
 	* select name ,if(actors[0]='刘亦菲','look','no look') m movies;
 	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-42918704c1bf85e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
