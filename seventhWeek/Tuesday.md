@@ -1,4 +1,4 @@
-## Servlet&&ajax&&Springboot的SSM框架
+## ajax&&Springboot的SSM框架
 
 * 处理eclipse的缓存问题 四大步骤
 	* 1.右键clean
@@ -60,20 +60,33 @@
 			* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-3d69d20991b2e9c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 		* UserssDao.java
 			* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-90ba0c7d7648ed5b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-* ssm
+* ssm框架搭建
 * 实现查询数据库中所有的数据
-	* 1.逆向工程(帮助创建工程固定包和类)
+	* 1.创建springboot项目
+		* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-e388219736a24b1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+		* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-98987642794fe49d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+	* 2.修改pom.xml把需要引入的dependence加入，plugin
+	* 3.逆向工程(帮助创建工程固定包和类，还有要生成的xml放的位置)
+	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-a6307a2545f7ccda.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 		* generatorConfig.xml
 		* ps：进入文件中，将数据库连接和一些包和类名改为自己所需即可
 		* 运行
 		* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-322a62912ebaa5f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-	* 2.创建一个util包，里面创建一个MyMapper类
-		* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-b7eb288f46ae361f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-	* 3.application.yml
-		* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-1c0a209a3e1ebf22.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-	* 4.在Controller包中创建UserController类
-		* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-31a99f30e87329af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* 4.创建一个util包，里面创建一个MyMapper类
+		* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-f121600f857193af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+	* 5.application.yml
+		* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-faea856737150343.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+	* 6.在FirstbootApplication中设置boot项目的主入口	
+		* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-6c546c6069a90eb4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+		* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-39e1b93f649d7ed3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+	* 7.在Controller包中创建UserController类
+		* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-31a99f30e87329af.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+		* ps：将要使用的dao层接口定义成对应的controller的属性，加上@Autowired注解
 	* 效果
 		* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-faed72c840049429.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
