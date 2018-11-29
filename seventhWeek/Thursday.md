@@ -57,9 +57,15 @@
 
 		* UserssController.java
 		* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-2fecdce377e82c3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-
 	
 * 联表查询	
-	
+	* UserssMapper.java
+	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-c9a750e5daf6453c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+	* UserssMapper.xml
+	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-a53d7dd3995fc850.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-6e0c03aac062c5dc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+	* UserssController.java
+	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-45770257be807dd0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
