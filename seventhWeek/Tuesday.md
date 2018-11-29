@@ -66,7 +66,7 @@
 		* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-e388219736a24b1c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 		* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-98987642794fe49d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-	* 2.修改pom.xml把需要引入的dependence加入，plugin
+	* 2.修改pom.xml把需要引入的dependencies，plugin加入
 	* 3.逆向工程(帮助创建工程固定包和类，还有要生成的xml放的位置)
 	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-a6307a2545f7ccda.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
