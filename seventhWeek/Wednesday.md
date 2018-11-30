@@ -7,6 +7,5 @@
 	* 5.azkaban执行mapreduce进行数据清洗；
 	* 6.azkaban执行hive；
 	* 7.sqoop导到mysql
-* 实现
-	* 1.搭建ssm框架请参考7-2
-	
+* 查看ssm执行后的sql情况
+	* localhost:8080/druid
