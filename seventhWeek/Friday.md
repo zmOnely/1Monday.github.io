@@ -1,51 +1,51 @@
-### ÅäÖÃÔËĞĞÎ±zookeeper
-* 1.½«zookerperÑ¹Ëõ°üµ¼Èë/home/hadoopÏÂ£¬½âÑ¹
-* 2.mkdir zk£¬½«½âÑ¹ºÃµÄzookeeper-3.4.6ÎÄ¼ş¼ĞÒÆ¶¯µ½zkÎÄ¼ş¼ĞÖĞ
+### é…ç½®è¿è¡Œä¼ªzookeeper
+* 1.å°†zookerperå‹ç¼©åŒ…å¯¼å…¥/home/hadoopä¸‹ï¼Œè§£å‹
+* 2.mkdir zkï¼Œå°†è§£å‹å¥½çš„zookeeper-3.4.6æ–‡ä»¶å¤¹ç§»åŠ¨åˆ°zkæ–‡ä»¶å¤¹ä¸­
     mv zookeeper-3.4.6 zk/
-* 3.½«ÎÄ¼ş¼Ğ¸ÄÃûÎªzk1
+* 3.å°†æ–‡ä»¶å¤¹æ”¹åä¸ºzk1
     mv zookeeper-3.4.6/ zk1	
-* 4.ÔÚ¸´ÖÆÁ½·İzk1£¬ÃüÃûÎªzk2,zk3
+* 4.åœ¨å¤åˆ¶ä¸¤ä»½zk1ï¼Œå‘½åä¸ºzk2,zk3
 	cp zk1/ zk2; cp zk1/ zk3
 	![image.png](https://upload-images.jianshu.io/upload_images/14467401-b81d4eb0908af545.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-* 5.·Ö±ğÅäÖÃ
-	* ÔÚ/home/hadoop/zk/zk1/confÏÂ
+* 5.åˆ†åˆ«é…ç½®
+	* åœ¨/home/hadoop/zk/zk1/confä¸‹
 	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-a22ac4db0b6cd682.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-* 6.Ìí¼ÓÉÏid			
+* 6.æ·»åŠ ä¸Šid			
 	* echo "1" >> /home/hadoop/zk/zk1/zkData/myid
-	* ps£º""ÀïÃæµÄÊı×ÖºÍÅäÖÃÖĞµÄserver.#Òª±£³ÖÒ»ÖÂ£¬Èı¸ö¶¼ÅäÖÃÉÏ
+	* psï¼š""é‡Œé¢çš„æ•°å­—å’Œé…ç½®ä¸­çš„server.#è¦ä¿æŒä¸€è‡´ï¼Œä¸‰ä¸ªéƒ½é…ç½®ä¸Š
 	* server.1=192.168.197.148:2888:3888
-* 7.¿ªÆô·şÎñ
-	* ÔÚ/home/hadoop/zkÏÂ
+* 7.å¼€å¯æœåŠ¡
+	* åœ¨/home/hadoop/zkä¸‹
 	* zk1/bin/zkServer.sh start
-* 8.²é¿´Ğ§¹û
+* 8.æŸ¥çœ‹æ•ˆæœ
 	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-c461c8dbe6dc4ce7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-	* ps£ºÕâÑù¼´Îª³É¹¦
+	* psï¼šè¿™æ ·å³ä¸ºæˆåŠŸ
 
 	
-### ÅäÖÃÍêÈ«·Ö²¼Ê½µÄzookeeper
-* 1.½«zookerperÑ¹Ëõ°üµ¼Èë/home/hadoopÏÂ£¬½âÑ¹
-* 2.ÅäÖÃ
+### é…ç½®å®Œå…¨åˆ†å¸ƒå¼çš„zookeeper
+* 1.å°†zookerperå‹ç¼©åŒ…å¯¼å…¥/home/hadoopä¸‹ï¼Œè§£å‹
+* 2.é…ç½®
 	* cd /home/hadoop/zookeeper-3.4.6/conf
 	* cp zoo_sample.cfg zoo.cfg
-	* vim zoo.cfg ½øĞĞ¸ü¸Ä
+	* vim zoo.cfg è¿›è¡Œæ›´æ”¹
 	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-7df0bec4486da587.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
-* 3.cd .. ÍË»Ø/home/hadoop/zookeeper-3.4.6	
+* 3.cd .. é€€å›/home/hadoop/zookeeper-3.4.6	
 	* mkdir zkdata
 	* echo "2" >> zkdata/myid
-* 4.½«ÈıÌ¨½øĞĞÏàÍ¬µÄ²Ù×÷ºó½øĞĞÆô¶¯
+* 4.å°†ä¸‰å°è¿›è¡Œç›¸åŒçš„æ“ä½œåè¿›è¡Œå¯åŠ¨
 	* bin/zkServer.sh start(/home/hadoop/zookeeper-3.4.6)
 	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-eb1499dd594000db.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-* 5.²é¿´×´Ì¬
+* 5.æŸ¥çœ‹çŠ¶æ€
 	* bin/zkServer.sh status
 	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-eca49ade07041a4b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-* 6.²é¿´ÈÕÖ¾ĞÅÏ¢(µ±ÓĞ´íÎóÊ±)
+* 6.æŸ¥çœ‹æ—¥å¿—ä¿¡æ¯(å½“æœ‰é”™è¯¯æ—¶)
 	* ![image.png](https://upload-images.jianshu.io/upload_images/14467401-6c493b021213cb54.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 	
-* Í¨¹ıxshell²Ù×÷zookeeper	
+* é€šè¿‡xshellæ“ä½œzookeeper	
 	
-* Í¨¹ıjava²Ù×÷zookeeper	
+* é€šè¿‡javaæ“ä½œzookeeper	
 	
 	
 	
