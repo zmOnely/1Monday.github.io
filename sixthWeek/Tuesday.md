@@ -72,6 +72,526 @@
 	
 * ![图片1.png](https://upload-images.jianshu.io/upload_images/14467401-ca5d892c61426803.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 	
+* DUOYI
+> ###### **Flume日志采集工具**
+>
+> **Author:oldsheep**
+
+### Flume核心工作机制
+
+----
+
+![1546833671543](C:\Users\ThinkPad\Pictures\typora\1546833671543.png)
+
+
+
+### Flume安装及实战
+
+----
+
+##### 1/ 系统要求
+
+>Flume 1.6.x要求使用java 1.6+
+
+
+
+##### 2/ 安装
+
+>上传:...
+>
+>解压:`tar zxvf apache-flume-1.6.0-bin.tar.gz -C root/apps`
+>
+>修改配置文件:
+>
+>`cd /root/apps/flume-1.6.0/conf`
+>
+>`mv flume-env.sh.template flume-env.sh`
+>
+>`vim flume-env.sh`
+
+```properties
+export JAVA_HOME=/usr/local/java/jdk1.8.0_141/
+# 注意：输入路径的时候，可以在vi的命令行模式下输入：r! echo /usr/[制表符号会有提示]
+```
+
+##### 3/ 案例
+
+**案例一：从一个网络端口获取数据，然后将数据输出到控制台：**
+
+![1546832964317](C:\Users\ThinkPad\Pictures\typora\1546832964317.png)
+
+```properties
+# Name the components on this agent
+a1.sources = r1 
+a1.sinks = k1
+a1.channels = c1
+
+# Describe/configure the source
+a1.sources.r1.type = netcat
+a1.sources.r1.bind = hdp-nd-01
+a1.sources.r1.port = 52020
+
+# Describe the sink
+a1.sinks.k1.type = logger
+
+# Use a channel which buffers events in memory
+a1.channels.c1.type = memory
+a1.channels.c1.capacity = 1000
+a1.channels.c1.transactionCapacity = 100
+
+# Bind the source and sink to the channel
+a1.sources.r1.channels = c1
+a1.sinks.k1.channel = c1
+```
+
+启动：`bin/flume-ng agent -n a1 -c conf/ -f myagent/netcat-logger.conf -Dflume.root.logger=INFO,console`
+
+>Note： 
+>
+>如果没有安装telnet使用yum安装一下telnet服务；
+>
+>建议把yum改成网络yum源；
+
+发送数据：`telnet hdp-nd-01 52020`
+
+
+
+**案例二：从文件下采集文件到hdfs**
+
+![1546845085874](C:\Users\ThinkPad\Pictures\typora\1546845085874.png)
+
+编辑Agent文件：
+
+```properties
+# Name the components on this agent
+a1.sources = r1
+a1.sinks = k1
+a1.channels = c1
+
+# Describe/configure the source
+a1.sources.r1.type = spooldir
+a1.sources.r1.spoolDir = /root/logs
+a1.sources.r1.fileHeader = true
+
+# Describe the sink
+a1.sinks.k1.type = hdfs
+a1.sinks.k1.hdfs.path = hdfs://hdp-nd-01:9000/doit03/flume/%Y-%m-%d/
+a1.sinks.k1.hdfs.filePrefix = events-
+# 因为路径上需要时间，所以useLocalTimeStamp在Event的header中放入一个timestamp时间戳
+a1.sinks.k1.hdfs.useLocalTimeStamp=true
+
+
+# Use a channel which buffers events in memory
+a1.channels.c1.type = memory
+a1.channels.c1.capacity = 1000
+a1.channels.c1.transactionCapacity = 100
+
+# Bind the source and sink to the channel
+a1.sources.r1.channels = c1
+a1.sinks.k1.channel = c1
+```
+
+注意异常：
+
+![1546845175011](C:\Users\ThinkPad\Pictures\typora\1546845175011.png)
+
+> 解决方案：提前创建好监控的文件夹
+
+
+
+![1546845206252](C:\Users\ThinkPad\Pictures\typora\1546845206252.png)
+
+> 解决方案：在sink组件的配置中添加`hdfs.useLocalTimeStamp=true`
+
+
+
+> 不能在监控的文件夹下方同名的文件，不然会报错；
+>
+> 解决办法就是删掉同名的文件，重启Flume。
+
+
+
+**案例三：将一个实时别写的文件数据，采集到Kafka**
+
+![1546845663457](C:\Users\ThinkPad\Pictures\typora\1546845663457.png)
+
+编辑Agent配置文件：
+
+```properties
+# Name the components on this agent
+a1.sources = r1
+a1.sinks = k1
+a1.channels = c1
+
+# Describe/configure the source
+a1.sources.r1.type = exec
+a1.sources.r1.command = tail -F /root/logs/access.log
+
+# Describe the sink
+a1.sinks.k1.type = org.apache.flume.sink.kafka.KafkaSink
+a1.sinks.k1.topic = flume
+a1.sinks.k1.brokerList = hdp-nd-01:9092,hdp-nd-02:9092,hdp-nd-03:9092
+a1.sinks.k1.requiredAcks = 1
+a1.sinks.k1.batchSize = 20
+
+# Use a channel which buffers events in memory
+a1.channels.c1.type = memory
+a1.channels.c1.capacity = 1000
+a1.channels.c1.transactionCapacity = 100
+
+# Bind the source and sink to the channel
+a1.sources.r1.channels = c1
+a1.sinks.k1.channel = c1
+```
+
+启动Flume: `bin/flume-ng agent -n a1 -c conf -f myagent/exec-kakfa.conf`
+
+编写一个shell脚本，用来往`root/logs/access.log`写入数据：
+
+```shell
+while true
+do
+echo `date` >> /root/logs/access.log
+sleep 0.5
+done
+```
+
+> note:
+>
+> ​    通过观察发现，kafka主题下只有一个分区有数据，其他的分区没有数据，这对kafka来说是及其不好的，因为集群中只有一个节点在干活。
+>
+> ​    解决方案就是的使用拦截器(UUID Interceptor)了.
+>
+>  
+>
+> `tail -F`和`tail -f`的区别：
+>
+> tail -F监控文件的时候，文件可以删除；删除之后，如果重新创建这个文件，还是继续监控；
+>
+> tail -f监控文件的时候，文件可以删除，但是删除之后如果重新创建这个文件，不会继续监控；
+
+
+
+
+
+**案例四： 多级Agent串联**
+
+
+
+![1546848990019](C:\Users\ThinkPad\Pictures\typora\1546848990019.png)
+
+编辑hdp-nd-01的agent配置：
+
+```properties
+# Name the components on this agent
+a1.sources = r1
+a1.sinks = k1
+a1.channels = c1
+
+# Describe/configure the source
+a1.sources.r1.type = exec
+a1.sources.r1.command = tail -F /root/logs/access.log
+
+# Describe the sink
+a1.sinks.k1.type = avro
+a1.sinks.k1.hostname = hdp-nd-02
+a1.sinks.k1.port = 4545
+
+# Use a channel which buffers events in memory
+a1.channels.c1.type = memory
+a1.channels.c1.capacity = 1000
+a1.channels.c1.transactionCapacity = 100
+
+# Bind the source and sink to the channel
+a1.sources.r1.channels = c1
+a1.sinks.k1.channel = c1
+```
+
+编辑hdp-nd-02的Agent配置：
+
+```properties
+# Name the components on this agent
+a1.sources = r1
+a1.sinks = k1
+a1.channels = c1
+
+# Describe/configure the source
+a1.sources.r1.type = avro
+a1.sources.r1.bind = hdp-nd-02
+a1.sources.r1.port = 4545
+
+# Describe the sink
+a1.sinks.k1.type = logger
+
+# Use a channel which buffers events in memory
+a1.channels.c1.type = memory
+a1.channels.c1.capacity = 1000
+a1.channels.c1.transactionCapacity = 100
+
+# Bind the source and sink to the channel
+a1.sources.r1.channels = c1
+a1.sinks.k1.channel = c1
+```
+
+启动Agent:
+
+> 先启动hdp-nd-02的Agent: `bin/flume-ng agent -n a1 -c conf/ -f myagent/avro-logger.conf`
+>
+> 启动hdp-nd-01的Agent: `bin/flume-ng agent -n a1 -c conf/ -f myagent/exec-avro.conf`
+
+
+
+**案例五：Flume的高可用, k1和k2只能有一个工作**
+
+![1546851966413](C:\Users\ThinkPad\Pictures\typora\1546851966413.png)
+
+
+
+编辑hdp-nd-01的Agent配置：
+
+```properties
+# Name the components on this agent
+a1.sources = r1
+a1.sinks = k1 k2
+a1.channels = c1
+
+# k1和k2谁的优先级高谁先工作
+a1.sinkgroups = g1
+a1.sinkgroups.g1.sinks = k1 k2
+a1.sinkgroups.g1.processor.type = failover
+a1.sinkgroups.g1.processor.priority.k1 = 5
+a1.sinkgroups.g1.processor.priority.k2 = 10
+a1.sinkgroups.g1.processor.maxpenalty = 10000
+
+# Describe/configure the source
+a1.sources.r1.type = exec
+a1.sources.r1.command = tail -F /root/logs/access.log
+
+# Describe the k1
+a1.sinks.k1.type = avro
+a1.sinks.k1.hostname = hdp-nd-02
+a1.sinks.k1.port = 4141
+
+# Describe the k2
+a1.sinks.k2.type = avro
+a1.sinks.k2.hostname = hdp-nd-03
+a1.sinks.k2.port = 4141
+
+
+# Use a channel which buffers events in memory
+a1.channels.c1.type = memory
+a1.channels.c1.capacity = 1000
+a1.channels.c1.transactionCapacity = 100
+
+# Bind the source and sink to the channel
+a1.sources.r1.channels = c1
+a1.sinks.k1.channel = c1
+a1.sinks.k2.channel = c1
+```
+
+编辑hdp-nd-02的Agent配置文件：
+
+```properties
+# Name the components on this agent
+a1.sources = r1
+a1.sinks = k1
+a1.channels = c1
+
+# Describe/configure the source
+a1.sources.r1.type = avro
+a1.sources.r1.bind = hdp-nd-02
+a1.sources.r1.port = 4141
+
+# Describe the sink
+a1.sinks.k1.type = hdfs
+a1.sinks.k1.hdfs.path = hdfs://hdp-nd-01:9000/doit03/ha
+
+
+# Use a channel which buffers events in memory
+a1.channels.c1.type = memory
+a1.channels.c1.capacity = 1000
+a1.channels.c1.transactionCapacity = 100
+
+# Bind the source and sink to the channel
+a1.sources.r1.channels = c1
+a1.sinks.k1.channel = c1
+```
+
+编辑hdp-nd-03的Agent配置文件：
+
+```properties
+# Name the components on this agent
+a1.sources = r1
+a1.sinks = k1
+a1.channels = c1
+
+# Describe/configure the source
+a1.sources.r1.type = avro
+a1.sources.r1.bind = hdp-nd-03
+a1.sources.r1.port = 4141
+
+# Describe the sink
+a1.sinks.k1.type = hdfs
+a1.sinks.k1.hdfs.path = hdfs://hdp-nd-01:9000/doit03/ha
+
+
+# Use a channel which buffers events in memory
+a1.channels.c1.type = memory
+a1.channels.c1.capacity = 1000
+a1.channels.c1.transactionCapacity = 100
+
+# Bind the source and sink to the channel
+a1.sources.r1.channels = c1
+a1.sinks.k1.channel = c1
+```
+
+启动顺序：
+
+> 分别先启动`hdp-nd-02`和`hdp-nd-03`的`flume`;
+>
+> 然后启动`hdp-nd-01`的`flume`；
+>
+> 停止`hdp-nd-03`的`flume`进程，观察到`hdp-nd-02`开始工作；
+
+
+
+**案例六：拦截器的使用Interceptor**
+
+> **Timestamp Interceptor:**
+>
+> 往Event的`header`里面放一个key=timestamp  value=时间(毫秒)
+>
+> ` headers:{timestamp=1546848454265}`
+
+
+
+> **Host Interceptor:**
+>
+> 往Event的`header`里面放一个key=hostname value=ip
+>
+> `headers:{hostname=10.172.50.61}`
+
+
+
+> **Static Interceptor:**
+>
+> 往Event的`header`里面放一对固定的key-value
+>
+> `headers:{teacher=oldsheep}`
+
+
+
+> **UUID Interceptor:**
+>
+> 往Event的`header`里面放一个指定的key, value=UUID, UUID拦截器可以解决Kafka sink下沉数据的时候数据分布不均匀问题，但是`headerName`的值必须等于`key`
+>
+> `headers:{key=475a7f33-3de2-44ca-909e-55cafcbd9dbf}`
+>
+> ```properties
+> # Name the components on this agent
+> a1.sources = r1
+> a1.sinks = k1
+> a1.channels = c1
+> 
+> # Describe/configure the source
+> a1.sources.r1.type = exec
+> a1.sources.r1.command = tail -F /root/logs/access.log
+> 
+> a1.sources.r1.interceptors = i4
+> a1.sources.r1.interceptors.i4.type = org.apache.flume.sink.solr.morphline.UUIDInterceptor$Builder
+> a1.sources.r1.interceptors.i4.headerName = key
+> 
+> # Describe the sink
+> a1.sinks.k1.type = org.apache.flume.sink.kafka.KafkaSink
+> a1.sinks.k1.topic = flume
+> a1.sinks.k1.brokerList = hdp-nd-01:9092,hdp-nd-02:9092,hdp-nd-03:9092
+> a1.sinks.k1.requiredAcks = 1
+> a1.sinks.k1.batchSize = 20
+> 
+> # Use a channel which buffers events in memory
+> a1.channels.c1.type = memory
+> a1.channels.c1.capacity = 1000
+> a1.channels.c1.transactionCapacity = 100
+> 
+> # Bind the source and sink to the channel
+> a1.sources.r1.channels = c1
+> a1.sinks.k1.channel = c1
+> ```
+
+**案例七：Interceptor实战**
+
+目录下有三个正在被写的日志文件，现在要求将采集到的日志文件的内容存储到hdfs，不同的数据存储到不同的目录下：
+
+![1546855827496](C:\Users\ThinkPad\Pictures\typora\1546855827496.png)
+
+编辑Agent配置文件：
+
+```properties
+# Name the components on this agent
+a1.sources = r1 r2 r3
+a1.sinks = k1
+a1.channels = c1
+
+# Describe/configure the source
+a1.sources.r1.type = exec
+a1.sources.r1.command = tail -F /root/logs/web.log
+a1.sources.r1.interceptors = i4
+a1.sources.r1.interceptors.i4.type = static
+a1.sources.r1.interceptors.i4.key = type
+a1.sources.r1.interceptors.i4.value = web
+
+a1.sources.r2.type = exec
+a1.sources.r2.command = tail -F /root/logs/access.log
+a1.sources.r2.interceptors = i3
+a1.sources.r2.interceptors.i3.type = static
+a1.sources.r2.interceptors.i3.key = type
+a1.sources.r2.interceptors.i3.value = access
+
+a1.sources.r3.type = exec
+a1.sources.r3.command = tail -F /root/logs/nginx.log
+a1.sources.r3.interceptors = i2
+a1.sources.r3.interceptors.i2.type = static
+a1.sources.r3.interceptors.i2.key = type
+a1.sources.r3.interceptors.i2.value = nginx
+
+# Describe the sink
+a1.sinks.k1.type = hdfs
+# %{type}是一个动态的表达式，从header去取key=type的值
+a1.sinks.k1.hdfs.path = hdfs://hdp-nd-01:9000/doit03/%Y-%m-%d/%{type}
+a1.sinks.k1.hdfs.filePrefix = events-
+# 因为路径上需要时间，所以useLocalTimeStamp在Event的header中放入一个timestamp时间戳
+a1.sinks.k1.hdfs.useLocalTimeStamp=true
+
+# Use a channel which buffers events in memory
+a1.channels.c1.type = memory
+a1.channels.c1.capacity = 1000
+a1.channels.c1.transactionCapacity = 100
+
+# Bind the source and sink to the channel
+a1.sources.r1.channels = c1
+a1.sources.r2.channels = c1
+a1.sources.r3.channels = c1
+a1.sinks.k1.channel = c1
+```
+
+编写shell生成数据:
+
+```shell
+while true
+do
+echo `date` >> /root/logs/web.log
+echo `date` >> /root/logs/access.log
+echo `date` >> /root/logs/nginx.log
+sleep 0.5
+done
+```
+
+启动Flume:
+
+```shell
+bin/flume-ng agent -n a1 -c conf -f myagent/muli-exec-hdfs.conf
+```
+
 	
 	
 	
