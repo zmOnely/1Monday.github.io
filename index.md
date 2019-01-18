@@ -34,6 +34,18 @@
 	- [Thursday(Hive的jdbc接口命令)](https://zmonely.github.io/zmOnely/fifthWeek/Thursday)
 	- [Friday(Hive函数)](https://zmonely.github.io/zmOnely/fifthWeek/Friday)
 	
+	
+	- [1](https://zmonely.github.io/zmOnely/sixthWeek/Monday)
+	- [2](https://zmonely.github.io/zmOnely/sixthWeek/Tuesday)
+	- [3](https://zmonely.github.io/zmOnely/sixthWeek/Wednesday)
+	- [4](https://zmonely.github.io/zmOnely/sixthWeek/Thursday)
+	- [5](https://zmonely.github.io/zmOnely/sixthWeek/Friday)
+	
+	- [1](https://zmonely.github.io/zmOnely/seventhWeek/Monday)
+	- [2](https://zmonely.github.io/zmOnely/seventhWeek/Tuesday)
+	- [3](https://zmonely.github.io/zmOnely/seventhWeek/Wednesday)
+	- [4](https://zmonely.github.io/zmOnely/seventhWeek/Thursday)
+	- [5](https://zmonely.github.io/zmOnely/seventhWeek/Friday)
 
 		
 	
