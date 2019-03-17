@@ -1,7 +1,7 @@
 ## Hive的jdbc接口命令
 * 进入jdbc接口的方法
 	* beeline
-	* !connection jdbc:hive2://localhost:10000
+	* !connect jdbc:hive2://localhost:10000
 	* 再复制一个会话，hiveserver2，保持打开状态即可
 * 创建数据库
 	* create database 数据库名;
